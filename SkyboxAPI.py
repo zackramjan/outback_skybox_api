@@ -46,10 +46,10 @@ class SkyboxAPI(object):
         return all
 
     def getAlerts(self):
-        return self.getSkyboxURL(self.url + "/systemlog/alertStatus") 
+        return self.getSkyboxURLGET(self.url + "/systemlog/alertStatus") 
 
     def getNotifications(self):
-        return self.getSkyboxURL(self.url + "/systemlog/readnotification")
+        return self.getSkyboxURLGET(self.url + "/systemlog/readnotification")
 
  
 

@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import json
 import sys
+import datetime  
 import SkyboxAPI
 
 #this is an example usage of the SkyboxAPI to retrieve and print various metrics
@@ -41,6 +42,13 @@ def main(argv=None):
     #printing the corresponding property, describes the units etc
     print(status['inverter_current_status_property'])
 
+    #get and print the Alerts, these are the red-marked alerts from the skybox graphical interface
+    for alert in s.getAlerts():
+        print(str(alert["fileIndex"]) + " " + str(datetime.datetime.fromtimestamp(int(alert["Timestamp"])/1000))  + "\t" + alert["Message"])
+
+    #get and print the Notifcations, these are the in the "log" section of the skybox graphical interface
+    for notifcation in s.getNotifications():
+        print(str(notifcation["fileIndex"]) + " " + str(datetime.datetime.fromtimestamp(int(notifcation["Timestamp"])/1000))  + "\t" + notifcation["Message"])
 
 if __name__ == '__main__':
     sys.exit(main())
