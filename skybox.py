@@ -42,7 +42,8 @@ def main(argv=None):
     #printing the corresponding property, describes the units etc
     print(status['inverter_current_status_property'])
 
-    #get and print the Alerts, these are the red-marked alerts from the skybox graphical interface
+    #get and print the Alerts, these are the red-marked alerts from the skybox graphical interface. 
+    # Also note the timestamps are typically in millisecond epoch time (int), so we can convert them to python datetimes if desired
     for alert in s.getAlerts():
         print(str(alert["fileIndex"]) + " " + str(datetime.datetime.fromtimestamp(int(alert["Timestamp"])/1000))  + "\t" + alert["Message"])
 
