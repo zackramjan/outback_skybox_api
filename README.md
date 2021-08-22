@@ -12,7 +12,7 @@ In terms of current functionality, you can:
 A next step for this project would be to write or change settings. For example, force the battery to charge
 
 
-the follow snippet shows the basics:
+the following snippet shows the basics:
 ```python
     import json
     import SkyboxAPI
