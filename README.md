@@ -14,6 +14,8 @@ A next step for this project would be to write or change settings. For example, 
 
 the follow snippet shows the basics:
 ```python
+    import json
+    import SkyboxAPI
     # make sure you have enabled remote login in Global Settings -> System -> Remote Security -> Enable Remote Login. 
     s = SkyboxAPI.SkyboxAPI()
 
