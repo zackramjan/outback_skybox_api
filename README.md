@@ -39,6 +39,14 @@ the follow snippet shows the basics:
     # for every 'metric', there is usually a corresponding 'metric_property' which describes the range of values the metric returns.
     # here we can see that 1 means "producing" and 3 means "sleeping"
     print(status['pv_status_property'])
+    
+    #get and print the Alerts, these are the red-marked alerts from the skybox graphical interface
+    for alert in s.getAlerts():
+        print(str(alert["fileIndex"]) + " " + str(datetime.datetime.fromtimestamp(int(alert["Timestamp"])/1000))  + "\t" + alert["Message"])
+
+    #get and print the Notifcations, these are the in the "log" section of the skybox graphical interface
+    for notifcation in s.getNotifications():
+        print(str(notifcation["fileIndex"]) + " " + str(datetime.datetime.fromtimestamp(int(notifcation["Timestamp"])/1000))  + "\t" + notifcation["Message"])
 ```    
 
 
