@@ -40,11 +40,12 @@ the follow snippet shows the basics:
     # here we can see that 1 means "producing" and 3 means "sleeping"
     print(status['pv_status_property'])
     
-    #get and print the Alerts, these are the red-marked alerts from the skybox graphical interface
+    # get and print the Alerts, these are the red-marked alerts from the skybox graphical interface
+    # Also note the timestamps are typically in millisecond epoch time (int), so we can convert them to python datetimes if desired
     for alert in s.getAlerts():
         print(str(alert["fileIndex"]) + " " + str(datetime.datetime.fromtimestamp(int(alert["Timestamp"])/1000))  + "\t" + alert["Message"])
 
-    #get and print the Notifcations, these are the in the "log" section of the skybox graphical interface
+    # get and print the Notifcations, these are the in the "log" section of the skybox graphical interface
     for notifcation in s.getNotifications():
         print(str(notifcation["fileIndex"]) + " " + str(datetime.datetime.fromtimestamp(int(notifcation["Timestamp"])/1000))  + "\t" + notifcation["Message"])
 ```    
