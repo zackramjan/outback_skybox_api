@@ -31,22 +31,27 @@ class SkyboxAPI(object):
         response = self.session.post(url + "/authenticateuser/login",data=loginInfo)
         return response.json()
 
+    def getSkyboxURLGET(self,url):
+       response = self.session.get(url)
+       return response.json()
+
+    def getSkyboxURLPOST(self,url):
+       response = self.session.post(url)
+       return response.json()
+
     def getStatus(self):
-        response = self.session.get(self.url + "/donutstatus/read")
-        return response.json()
+        all = self.getSkyboxURLGET(self.url + "/donutstatus/read")
+        all.update(self.getSkyboxURLPOST(self.url + "/pvstatus/readPersistenceStatus"))
+        all.update(self.getSkyboxURLPOST(self.url + "/inverterstatus/readStatus"))
+        return all
 
     def getAlerts(self):
-        response = self.session.get(self.url + "/systemlog/alertStatus") 
-        return response.json()
+        return self.getSkyboxURL(self.url + "/systemlog/alertStatus") 
 
     def getNotifications(self):
-        response = self.session.get(self.url + "/systemlog/readnotification")
-        return response.json()
+        return self.getSkyboxURL(self.url + "/systemlog/readnotification")
 
-    def getPersistantStatus(self):
-        response = self.session.get(self.url + "/pvstatus/readPersistenceStatus")
-        return response.json()
+ 
 
-    def getInverterStatus(self):
-        response = self.session.get(self.url + "/inverterstatus/readStatus") 
-        return response.json()
+ 
+

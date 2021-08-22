@@ -35,6 +35,12 @@ def main(argv=None):
     #printing the corresponding property, describes the units etc
     print(status['load_combined_wattage_sum_property'])
 
+    #print the load from the load panel
+    print(status['inverter_current_status'])
+
+    #printing the corresponding property, describes the units etc
+    print(status['inverter_current_status_property'])
+
 
 if __name__ == '__main__':
     sys.exit(main())
