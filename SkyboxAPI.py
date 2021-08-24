@@ -41,8 +41,29 @@ class SkyboxAPI(object):
 
     def getStatus(self):
         all = self.getSkyboxURLGET(self.url + "/donutstatus/read")
-        all.update(self.getSkyboxURLPOST(self.url + "/pvstatus/readPersistenceStatus"))
         all.update(self.getSkyboxURLPOST(self.url + "/inverterstatus/readStatus"))
+        all.update(self.getSkyboxURLGET(self.url + "/regulatorydetails/readStatus"))
+
+        #PV
+        all.update(self.getSkyboxURLPOST(self.url + "/pvstatus/readPersistenceStatus"))
+        all.update(self.getSkyboxURLPOST(self.url + "/pvstatus/readStatus"))
+
+        #Grid
+        all.update(self.getSkyboxURLPOST(self.url + "/gridstatus/readStatus"))
+        all.update(self.getSkyboxURLPOST(self.url + "/gridstatus/readPersistenceStatus"))
+
+        #load
+        all.update(self.getSkyboxURLPOST(self.url + "/loadstatus/readPersistenceStatus"))
+        all.update(self.getSkyboxURLPOST(self.url + "/loadstatus/readStatus"))
+
+        #battery
+        all.update(self.getSkyboxURLPOST(self.url + "/batterystatus/readPersistenceStatus"))
+        all.update(self.getSkyboxURLPOST(self.url + "/batterystatus/readStatus"))
+
+        #gen
+        all.update(self.getSkyboxURLPOST(self.url + "/generatorstatus/readPersistenceStatus"))
+        all.update(self.getSkyboxURLPOST(self.url + "/generatorstatus/readStatus"))
+
         return all
 
     def getAlerts(self):
