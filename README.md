@@ -54,6 +54,120 @@ the following snippet shows the basics:
 
 
 # Skybox Available Metrics Reference
+## battery_absorb_time_remaining
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of battery_absorb_time_remaining is ' + status['battery_absorb_time_remaining'])
+```
+> the value of battery_absorb_time_remaining is 0
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**unitOfMeasure:** UNIT_HOUR_MINUTE<br/>
+**decimalScale:** 0<br/>
+
+
+## battery_ah_charging_today
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of battery_ah_charging_today is ' + status['battery_ah_charging_today'])
+```
+> the value of battery_ah_charging_today is 0.0000000000E+00
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**unitOfMeasure:** UNIT_AH<br/>
+**decimalScale:** 2<br/>
+
+
+## battery_ah_discharging_today
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of battery_ah_discharging_today is ' + status['battery_ah_discharging_today'])
+```
+> the value of battery_ah_discharging_today is 0.0000000000E+00
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**unitOfMeasure:** UNIT_AH<br/>
+**decimalScale:** 2<br/>
+
+
+## battery_amps
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of battery_amps is ' + status['battery_amps'])
+```
+> the value of battery_amps is -3.1682762504E-01
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**unitOfMeasure:** UNIT_AMPERE<br/>
+**decimalScale:** 2<br/>
+
+
+## battery_charge_cycle_count
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of battery_charge_cycle_count is ' + status['battery_charge_cycle_count'])
+```
+> the value of battery_charge_cycle_count is 2
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**decimalScale:** 0<br/>
+
+
+## battery_charging_state
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of battery_charging_state is ' + status['battery_charging_state'])
+```
+> the value of battery_charging_state is 0
+
+### Description
+**type:** string<br/>
+**default:** 0<br/>
+#### Possible Values (Enumeration)
+* 0 -> OFF
+* 1 -> BULK
+* 2 -> ABSORB
+* 3 -> FLOAT
+* 4 -> FLOAT_CC
+* 5 -> FLOAT_CV
+* 6 -> EQ
+* 7 -> RESTING
+
+
 ## battery_connected
 #### Example
 ```python
@@ -68,6 +182,430 @@ print('The value of battery_connected is ' + status['battery_connected'])
 ### Description
 **type:** boolean<br/>
 **default:** true<br/>
+
+
+## battery_days_since_last_equalization
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of battery_days_since_last_equalization is ' + status['battery_days_since_last_equalization'])
+```
+> the value of battery_days_since_last_equalization is 0
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**unitOfMeasure:** UNIT_DAY<br/>
+**decimalScale:** 0<br/>
+
+
+## battery_days_since_last_full_charge
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of battery_days_since_last_full_charge is ' + status['battery_days_since_last_full_charge'])
+```
+> the value of battery_days_since_last_full_charge is 16568
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**unitOfMeasure:** UNIT_DAY<br/>
+**decimalScale:** 0<br/>
+
+
+## battery_dc_bus_current
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of battery_dc_bus_current is ' + status['battery_dc_bus_current'])
+```
+> the value of battery_dc_bus_current is 4.5224554837E-02
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**unitOfMeasure:** UNIT_AMPERE<br/>
+**decimalScale:** 2<br/>
+
+
+## battery_dc_bus_power
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of battery_dc_bus_power is ' + status['battery_dc_bus_power'])
+```
+> the value of battery_dc_bus_power is 1.2690319061E+01
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**unitOfMeasure:** UNIT_KW<br/>
+**scalingFactor:** 0.001<br/>
+**decimalScale:** 2<br/>
+
+
+## battery_dc_bus_voltage
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of battery_dc_bus_voltage is ' + status['battery_dc_bus_voltage'])
+```
+> the value of battery_dc_bus_voltage is 0.0000000000E+00
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**unitOfMeasure:** UNIT_VOLTAGE<br/>
+**decimalScale:** 2<br/>
+
+
+## battery_discharge_cycle_count
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of battery_discharge_cycle_count is ' + status['battery_discharge_cycle_count'])
+```
+> the value of battery_discharge_cycle_count is 0
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**decimalScale:** 0<br/>
+
+
+## battery_eq_time_remaining
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of battery_eq_time_remaining is ' + status['battery_eq_time_remaining'])
+```
+> the value of battery_eq_time_remaining is 0
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**unitOfMeasure:** UNIT_HOUR_MINUTE<br/>
+**decimalScale:** 0<br/>
+
+
+## battery_float_time_remaining
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of battery_float_time_remaining is ' + status['battery_float_time_remaining'])
+```
+> the value of battery_float_time_remaining is 0
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**unitOfMeasure:** UNIT_HOUR_MINUTE<br/>
+**decimalScale:** 0<br/>
+
+
+## battery_kah_charging_lifetime
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of battery_kah_charging_lifetime is ' + status['battery_kah_charging_lifetime'])
+```
+> the value of battery_kah_charging_lifetime is 5.2830081433E-02
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**unitOfMeasure:** UNIT_KAH<br/>
+**decimalScale:** 2<br/>
+
+
+## battery_kah_discharging_lifetime
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of battery_kah_discharging_lifetime is ' + status['battery_kah_discharging_lifetime'])
+```
+> the value of battery_kah_discharging_lifetime is 4.5308038592E-02
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**unitOfMeasure:** UNIT_KAH<br/>
+**decimalScale:** 2<br/>
+
+
+## battery_kwh_charging_today
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of battery_kwh_charging_today is ' + status['battery_kwh_charging_today'])
+```
+> the value of battery_kwh_charging_today is 0.0000000000E+00
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**unitOfMeasure:** UNIT_KWH<br/>
+**decimalScale:** 2<br/>
+
+
+## battery_kwh_discharge_cumulative
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of battery_kwh_discharge_cumulative is ' + status['battery_kwh_discharge_cumulative'])
+```
+> the value of battery_kwh_discharge_cumulative is 2.1133244038E+00
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**unitOfMeasure:** UNIT_KWH<br/>
+**decimalScale:** 2<br/>
+
+
+## battery_kwh_discharging_today
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of battery_kwh_discharging_today is ' + status['battery_kwh_discharging_today'])
+```
+> the value of battery_kwh_discharging_today is 0.0000000000E+00
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**unitOfMeasure:** UNIT_KWH<br/>
+**decimalScale:** 2<br/>
+
+
+## battery_measurement_status
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of battery_measurement_status is ' + status['battery_measurement_status'])
+```
+> the value of battery_measurement_status is 0
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**decimalScale:** 0<br/>
+
+
+## battery_mwh_charging_lifetime
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of battery_mwh_charging_lifetime is ' + status['battery_mwh_charging_lifetime'])
+```
+> the value of battery_mwh_charging_lifetime is 2.5160906371E-03
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**unitOfMeasure:** UNIT_MWH<br/>
+**decimalScale:** 2<br/>
+
+
+## battery_mwh_discharging_lifetime
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of battery_mwh_discharging_lifetime is ' + status['battery_mwh_discharging_lifetime'])
+```
+> the value of battery_mwh_discharging_lifetime is 2.1133245900E-03
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**unitOfMeasure:** UNIT_MWH<br/>
+**decimalScale:** 2<br/>
+
+
+## battery_nameplate_ahrtg
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of battery_nameplate_ahrtg is ' + status['battery_nameplate_ahrtg'])
+```
+> the value of battery_nameplate_ahrtg is 0
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**decimalScale:** 0<br/>
+
+
+## battery_nameplate_discharte
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of battery_nameplate_discharte is ' + status['battery_nameplate_discharte'])
+```
+> the value of battery_nameplate_discharte is 0
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**decimalScale:** 0<br/>
+
+
+## battery_nameplate_soc_max
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of battery_nameplate_soc_max is ' + status['battery_nameplate_soc_max'])
+```
+> the value of battery_nameplate_soc_max is 100
+
+### Description
+**type:** number<br/>
+**default:** 100<br/>
+**decimalScale:** 0<br/>
+
+
+## battery_nameplate_soc_min
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of battery_nameplate_soc_min is ' + status['battery_nameplate_soc_min'])
+```
+> the value of battery_nameplate_soc_min is 0
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**decimalScale:** 0<br/>
+
+
+## battery_nameplate_wcharte_max
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of battery_nameplate_wcharte_max is ' + status['battery_nameplate_wcharte_max'])
+```
+> the value of battery_nameplate_wcharte_max is 5750
+
+### Description
+**type:** number<br/>
+**default:** 5750<br/>
+**decimalScale:** 0<br/>
+
+
+## battery_nameplate_wdischarte_max
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of battery_nameplate_wdischarte_max is ' + status['battery_nameplate_wdischarte_max'])
+```
+> the value of battery_nameplate_wdischarte_max is 5000
+
+### Description
+**type:** number<br/>
+**default:** 5000<br/>
+**decimalScale:** 0<br/>
+
+
+## battery_nameplate_whrtg
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of battery_nameplate_whrtg is ' + status['battery_nameplate_whrtg'])
+```
+> the value of battery_nameplate_whrtg is 0
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**decimalScale:** 0<br/>
+
+
+## battery_remaining_runtime
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of battery_remaining_runtime is ' + status['battery_remaining_runtime'])
+```
+> the value of battery_remaining_runtime is 0
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**unitOfMeasure:** UNIT_HOUR_MINUTE<br/>
+**decimalScale:** 0<br/>
 
 
 ## battery_state_of_charge
@@ -88,6 +626,153 @@ print('The value of battery_state_of_charge is ' + status['battery_state_of_char
 **decimalScale:** 0<br/>
 
 
+## battery_state_of_charge_historical_minimum
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of battery_state_of_charge_historical_minimum is ' + status['battery_state_of_charge_historical_minimum'])
+```
+> the value of battery_state_of_charge_historical_minimum is 75
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**unitOfMeasure:** UNIT_PERCENT<br/>
+**decimalScale:** 0<br/>
+
+
+## battery_state_of_health
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of battery_state_of_health is ' + status['battery_state_of_health'])
+```
+> the value of battery_state_of_health is 0
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**unitOfMeasure:** UNIT_PERCENT<br/>
+**decimalScale:** 0<br/>
+
+
+## battery_suns_bank_state
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of battery_suns_bank_state is ' + status['battery_suns_bank_state'])
+```
+> the value of battery_suns_bank_state is 1
+
+### Description
+**type:** string<br/>
+**default:** 1<br/>
+#### Possible Values (Enumeration)
+* 1 -> DISCONNECTED
+* 2 -> INITIALIZING
+* 3 -> CONNECTED
+* 4 -> STANDBY
+* 5 -> SOC_PROTECTION
+* 99 -> FAULT
+
+
+## battery_suns_charging_state
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of battery_suns_charging_state is ' + status['battery_suns_charging_state'])
+```
+> the value of battery_suns_charging_state is 1
+
+### Description
+**type:** string<br/>
+**default:** 1<br/>
+#### Possible Values (Enumeration)
+* 1 -> OFF
+* 2 -> EMPTY
+* 3 -> DISCHARGING
+* 4 -> CHARGING
+* 5 -> FULL
+* 6 -> HOLDING
+* 7 -> TESTING
+
+
+## battery_suns_type
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of battery_suns_type is ' + status['battery_suns_type'])
+```
+> the value of battery_suns_type is 0
+
+### Description
+**type:** string<br/>
+**default:** 0<br/>
+#### Possible Values (Enumeration)
+* 0 -> UNKNOWN
+* 1 -> LEAD_ACID
+* 2 -> NICKEL_METAL_HYDRATE
+* 3 -> NICKEL_CADMIUM
+* 4 -> LITHIUM_ION
+* 5 -> CARBON_ZINC
+* 6 -> ZINC_CHLORIDE
+* 7 -> ALKALINE
+* 8 -> RECHARGEABLE_ALKALINE
+* 9 -> SODIUM_SULFUR
+* 10 -> FLOW
+* 99 -> OTHER
+
+
+## battery_sunspec_event_1
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of battery_sunspec_event_1 is ' + status['battery_sunspec_event_1'])
+```
+> the value of battery_sunspec_event_1 is 0
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**decimalScale:** 0<br/>
+
+
+## battery_temp_comp_offset
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of battery_temp_comp_offset is ' + status['battery_temp_comp_offset'])
+```
+> the value of battery_temp_comp_offset is 0.0000000000E+00
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**unitOfMeasure:** UNIT_VOLTAGE<br/>
+**decimalScale:** 1<br/>
+
+
 ## battery_temperature
 #### Example
 ```python
@@ -106,6 +791,77 @@ print('The value of battery_temperature is ' + status['battery_temperature'])
 **decimalScale:** 2<br/>
 
 
+## battery_temperature_fet
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of battery_temperature_fet is ' + status['battery_temperature_fet'])
+```
+> the value of battery_temperature_fet is 35
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**unitOfMeasure:** UNIT_CELSIUS<br/>
+**decimalScale:** 0<br/>
+
+
+## battery_temperature_igbt
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of battery_temperature_igbt is ' + status['battery_temperature_igbt'])
+```
+> the value of battery_temperature_igbt is 29
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**unitOfMeasure:** UNIT_CELSIUS<br/>
+**decimalScale:** 0<br/>
+
+
+## battery_temperature_mcu_adc
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of battery_temperature_mcu_adc is ' + status['battery_temperature_mcu_adc'])
+```
+> the value of battery_temperature_mcu_adc is 1967
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**decimalScale:** 0<br/>
+
+
+## battery_time_since_last_eq
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of battery_time_since_last_eq is ' + status['battery_time_since_last_eq'])
+```
+> the value of battery_time_since_last_eq is 0
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**unitOfMeasure:** UNIT_MINUTE<br/>
+**decimalScale:** 0<br/>
+
+
 ## battery_voltage
 #### Example
 ```python
@@ -116,6 +872,60 @@ status = s.getStatus()
 print('The value of battery_voltage is ' + status['battery_voltage'])
 ```
 > the value of battery_voltage is 0.0000000000E+00
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**unitOfMeasure:** UNIT_VOLTAGE<br/>
+**decimalScale:** 1<br/>
+
+
+## battery_voltage_historical_maximum
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of battery_voltage_historical_maximum is ' + status['battery_voltage_historical_maximum'])
+```
+> the value of battery_voltage_historical_maximum is 5.9306350708E+01
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**unitOfMeasure:** UNIT_VOLT<br/>
+**decimalScale:** 2<br/>
+
+
+## battery_voltage_historical_minimum
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of battery_voltage_historical_minimum is ' + status['battery_voltage_historical_minimum'])
+```
+> the value of battery_voltage_historical_minimum is 4.4821647644E+01
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**unitOfMeasure:** UNIT_VOLT<br/>
+**decimalScale:** 2<br/>
+
+
+## battery_voltage_temp_comp
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of battery_voltage_temp_comp is ' + status['battery_voltage_temp_comp'])
+```
+> the value of battery_voltage_temp_comp is 0.0000000000E+00
 
 ### Description
 **type:** number<br/>
@@ -140,7 +950,7 @@ print('The value of battery_watts is ' + status['battery_watts'])
 **default:** 0<br/>
 **unitOfMeasure:** UNIT_KW<br/>
 **scalingFactor:** 0.001<br/>
-**decimalScale:** 1<br/>
+**decimalScale:** 2<br/>
 
 
 ## firmware_ui_action_enable_apply_sdcard_update
@@ -207,6 +1017,188 @@ print('The value of firmware_usb_present is ' + status['firmware_usb_present'])
 **default:** false<br/>
 
 
+## generator_ac_current_sum
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of generator_ac_current_sum is ' + status['generator_ac_current_sum'])
+```
+> the value of generator_ac_current_sum is 0.0000000000E+00
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**unitOfMeasure:** UNIT_AMPERE<br/>
+**decimalScale:** 2<br/>
+
+
+## generator_ags_status
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of generator_ags_status is ' + status['generator_ags_status'])
+```
+> the value of generator_ags_status is 0
+
+### Description
+**type:** string<br/>
+**default:** 0<br/>
+#### Possible Values (Enumeration)
+* 0 -> DISABLED
+* 1 -> ENABLED
+* 2 -> EXERCISE_DEFERRED
+* 3 -> QUIET_TIME_DEFERRED
+
+
+## generator_l1_apparent_power
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of generator_l1_apparent_power is ' + status['generator_l1_apparent_power'])
+```
+> the value of generator_l1_apparent_power is 0.0000000000E+00
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**unitOfMeasure:** UNIT_VOLT_AMPERE<br/>
+**decimalScale:** 2<br/>
+
+
+## generator_l1_current
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of generator_l1_current is ' + status['generator_l1_current'])
+```
+> the value of generator_l1_current is 0.0000000000E+00
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**unitOfMeasure:** UNIT_AMPERE<br/>
+**decimalScale:** 2<br/>
+
+
+## generator_l1_dc_current
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of generator_l1_dc_current is ' + status['generator_l1_dc_current'])
+```
+> the value of generator_l1_dc_current is -2.9999999329E-02
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**unitOfMeasure:** UNIT_AMPERE<br/>
+**decimalScale:** 2<br/>
+
+
+## generator_l1_kwh_bought_today
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of generator_l1_kwh_bought_today is ' + status['generator_l1_kwh_bought_today'])
+```
+> the value of generator_l1_kwh_bought_today is 0.0000000000E+00
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**unitOfMeasure:** UNIT_KWH<br/>
+**decimalScale:** 2<br/>
+
+
+## generator_l1_kwh_sold_today
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of generator_l1_kwh_sold_today is ' + status['generator_l1_kwh_sold_today'])
+```
+> the value of generator_l1_kwh_sold_today is 0.0000000000E+00
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**unitOfMeasure:** UNIT_KWH<br/>
+**decimalScale:** 2<br/>
+
+
+## generator_l1_mwh_bought_lifetime
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of generator_l1_mwh_bought_lifetime is ' + status['generator_l1_mwh_bought_lifetime'])
+```
+> the value of generator_l1_mwh_bought_lifetime is 0.0000000000E+00
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**unitOfMeasure:** UNIT_MWH<br/>
+**decimalScale:** 2<br/>
+
+
+## generator_l1_mwh_sold_lifetime
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of generator_l1_mwh_sold_lifetime is ' + status['generator_l1_mwh_sold_lifetime'])
+```
+> the value of generator_l1_mwh_sold_lifetime is 0.0000000000E+00
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**unitOfMeasure:** UNIT_MWH<br/>
+**decimalScale:** 2<br/>
+
+
+## generator_l1_power_factor
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of generator_l1_power_factor is ' + status['generator_l1_power_factor'])
+```
+> the value of generator_l1_power_factor is 1.0000000000E+00
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**decimalScale:** 2<br/>
+
+
 ## generator_l1_voltage
 #### Example
 ```python
@@ -222,6 +1214,57 @@ print('The value of generator_l1_voltage is ' + status['generator_l1_voltage'])
 **type:** number<br/>
 **default:** 0<br/>
 **unitOfMeasure:** UNIT_VOLT<br/>
+**decimalScale:** 2<br/>
+
+
+## generator_l1_voltage_variance_average
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of generator_l1_voltage_variance_average is ' + status['generator_l1_voltage_variance_average'])
+```
+> the value of generator_l1_voltage_variance_average is 0.0000000000E+00
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**decimalScale:** 2<br/>
+
+
+## generator_l1_voltage_variance_high
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of generator_l1_voltage_variance_high is ' + status['generator_l1_voltage_variance_high'])
+```
+> the value of generator_l1_voltage_variance_high is 0.0000000000E+00
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**decimalScale:** 2<br/>
+
+
+## generator_l1_voltage_variance_low
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of generator_l1_voltage_variance_low is ' + status['generator_l1_voltage_variance_low'])
+```
+> the value of generator_l1_voltage_variance_low is 0.0000000000E+00
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
 **decimalScale:** 2<br/>
 
 
@@ -244,6 +1287,149 @@ print('The value of generator_l1_wattage is ' + status['generator_l1_wattage'])
 **decimalScale:** 2<br/>
 
 
+## generator_l2_apparent_power
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of generator_l2_apparent_power is ' + status['generator_l2_apparent_power'])
+```
+> the value of generator_l2_apparent_power is 0.0000000000E+00
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**unitOfMeasure:** UNIT_VOLT_AMPERE<br/>
+**decimalScale:** 2<br/>
+
+
+## generator_l2_current
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of generator_l2_current is ' + status['generator_l2_current'])
+```
+> the value of generator_l2_current is 0.0000000000E+00
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**unitOfMeasure:** UNIT_AMPERE<br/>
+**decimalScale:** 2<br/>
+
+
+## generator_l2_dc_current
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of generator_l2_dc_current is ' + status['generator_l2_dc_current'])
+```
+> the value of generator_l2_dc_current is -1.9999999553E-02
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**unitOfMeasure:** UNIT_AMPERE<br/>
+**decimalScale:** 2<br/>
+
+
+## generator_l2_kwh_bought_today
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of generator_l2_kwh_bought_today is ' + status['generator_l2_kwh_bought_today'])
+```
+> the value of generator_l2_kwh_bought_today is 0.0000000000E+00
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**unitOfMeasure:** UNIT_KWH<br/>
+**decimalScale:** 2<br/>
+
+
+## generator_l2_kwh_sold_today
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of generator_l2_kwh_sold_today is ' + status['generator_l2_kwh_sold_today'])
+```
+> the value of generator_l2_kwh_sold_today is 0.0000000000E+00
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**unitOfMeasure:** UNIT_KWH<br/>
+**decimalScale:** 2<br/>
+
+
+## generator_l2_mwh_bought_lifetime
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of generator_l2_mwh_bought_lifetime is ' + status['generator_l2_mwh_bought_lifetime'])
+```
+> the value of generator_l2_mwh_bought_lifetime is 0.0000000000E+00
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**unitOfMeasure:** UNIT_MWH<br/>
+**decimalScale:** 2<br/>
+
+
+## generator_l2_mwh_sold_lifetime
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of generator_l2_mwh_sold_lifetime is ' + status['generator_l2_mwh_sold_lifetime'])
+```
+> the value of generator_l2_mwh_sold_lifetime is 0.0000000000E+00
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**unitOfMeasure:** UNIT_MWH<br/>
+**decimalScale:** 2<br/>
+
+
+## generator_l2_power_factor
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of generator_l2_power_factor is ' + status['generator_l2_power_factor'])
+```
+> the value of generator_l2_power_factor is 1.0000000000E+00
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**decimalScale:** 2<br/>
+
+
 ## generator_l2_voltage
 #### Example
 ```python
@@ -259,6 +1445,57 @@ print('The value of generator_l2_voltage is ' + status['generator_l2_voltage'])
 **type:** number<br/>
 **default:** 0<br/>
 **unitOfMeasure:** UNIT_VOLT<br/>
+**decimalScale:** 2<br/>
+
+
+## generator_l2_voltage_variance_average
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of generator_l2_voltage_variance_average is ' + status['generator_l2_voltage_variance_average'])
+```
+> the value of generator_l2_voltage_variance_average is 0.0000000000E+00
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**decimalScale:** 2<br/>
+
+
+## generator_l2_voltage_variance_high
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of generator_l2_voltage_variance_high is ' + status['generator_l2_voltage_variance_high'])
+```
+> the value of generator_l2_voltage_variance_high is 0.0000000000E+00
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**decimalScale:** 2<br/>
+
+
+## generator_l2_voltage_variance_low
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of generator_l2_voltage_variance_low is ' + status['generator_l2_voltage_variance_low'])
+```
+> the value of generator_l2_voltage_variance_low is 0.0000000000E+00
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
 **decimalScale:** 2<br/>
 
 
@@ -281,6 +1518,149 @@ print('The value of generator_l2_wattage is ' + status['generator_l2_wattage'])
 **decimalScale:** 2<br/>
 
 
+## generator_l3_apparent_power
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of generator_l3_apparent_power is ' + status['generator_l3_apparent_power'])
+```
+> the value of generator_l3_apparent_power is 0.0000000000E+00
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**unitOfMeasure:** UNIT_VOLT_AMPERE<br/>
+**decimalScale:** 2<br/>
+
+
+## generator_l3_current
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of generator_l3_current is ' + status['generator_l3_current'])
+```
+> the value of generator_l3_current is 0.0000000000E+00
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**unitOfMeasure:** UNIT_AMPERE<br/>
+**decimalScale:** 2<br/>
+
+
+## generator_l3_dc_current
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of generator_l3_dc_current is ' + status['generator_l3_dc_current'])
+```
+> the value of generator_l3_dc_current is 0.0000000000E+00
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**unitOfMeasure:** UNIT_AMPERE<br/>
+**decimalScale:** 2<br/>
+
+
+## generator_l3_kwh_bought_today
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of generator_l3_kwh_bought_today is ' + status['generator_l3_kwh_bought_today'])
+```
+> the value of generator_l3_kwh_bought_today is 0.0000000000E+00
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**unitOfMeasure:** UNIT_KWH<br/>
+**decimalScale:** 2<br/>
+
+
+## generator_l3_kwh_sold_today
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of generator_l3_kwh_sold_today is ' + status['generator_l3_kwh_sold_today'])
+```
+> the value of generator_l3_kwh_sold_today is 0.0000000000E+00
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**unitOfMeasure:** UNIT_KWH<br/>
+**decimalScale:** 2<br/>
+
+
+## generator_l3_mwh_bought_lifetime
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of generator_l3_mwh_bought_lifetime is ' + status['generator_l3_mwh_bought_lifetime'])
+```
+> the value of generator_l3_mwh_bought_lifetime is 0.0000000000E+00
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**unitOfMeasure:** UNIT_MWH<br/>
+**decimalScale:** 2<br/>
+
+
+## generator_l3_mwh_sold_lifetime
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of generator_l3_mwh_sold_lifetime is ' + status['generator_l3_mwh_sold_lifetime'])
+```
+> the value of generator_l3_mwh_sold_lifetime is 0.0000000000E+00
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**unitOfMeasure:** UNIT_MWH<br/>
+**decimalScale:** 2<br/>
+
+
+## generator_l3_power_factor
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of generator_l3_power_factor is ' + status['generator_l3_power_factor'])
+```
+> the value of generator_l3_power_factor is 1.0000000000E+00
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**decimalScale:** 2<br/>
+
+
 ## generator_l3_voltage
 #### Example
 ```python
@@ -296,6 +1676,57 @@ print('The value of generator_l3_voltage is ' + status['generator_l3_voltage'])
 **type:** number<br/>
 **default:** 0<br/>
 **unitOfMeasure:** UNIT_VOLT<br/>
+**decimalScale:** 2<br/>
+
+
+## generator_l3_voltage_variance_average
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of generator_l3_voltage_variance_average is ' + status['generator_l3_voltage_variance_average'])
+```
+> the value of generator_l3_voltage_variance_average is 0.0000000000E+00
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**decimalScale:** 2<br/>
+
+
+## generator_l3_voltage_variance_high
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of generator_l3_voltage_variance_high is ' + status['generator_l3_voltage_variance_high'])
+```
+> the value of generator_l3_voltage_variance_high is 0.0000000000E+00
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**decimalScale:** 2<br/>
+
+
+## generator_l3_voltage_variance_low
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of generator_l3_voltage_variance_low is ' + status['generator_l3_voltage_variance_low'])
+```
+> the value of generator_l3_voltage_variance_low is 0.0000000000E+00
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
 **decimalScale:** 2<br/>
 
 
@@ -318,6 +1749,52 @@ print('The value of generator_l3_wattage is ' + status['generator_l3_wattage'])
 **decimalScale:** 2<br/>
 
 
+## generator_last_start_reason
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of generator_last_start_reason is ' + status['generator_last_start_reason'])
+```
+> the value of generator_last_start_reason is 0
+
+### Description
+**type:** string<br/>
+**default:** 0<br/>
+#### Possible Values (Enumeration)
+* 0 -> NONE
+* 1 -> MANUAL
+* 2 -> BATTERY_VOLTAGE
+* 3 -> SOC
+* 4 -> LOAD
+* 5 -> EXERCISE
+
+
+## generator_last_stop_reason
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of generator_last_stop_reason is ' + status['generator_last_stop_reason'])
+```
+> the value of generator_last_stop_reason is 0
+
+### Description
+**type:** string<br/>
+**default:** 0<br/>
+#### Possible Values (Enumeration)
+* 0 -> NONE
+* 1 -> MANUAL
+* 2 -> BATTERY_VOLTAGE
+* 3 -> SOC
+* 4 -> LOAD
+* 5 -> EXERCISE
+
+
 ## generator_realtime_frequency
 #### Example
 ```python
@@ -334,6 +1811,22 @@ print('The value of generator_realtime_frequency is ' + status['generator_realti
 **default:** 0<br/>
 **unitOfMeasure:** UNIT_HERTZ<br/>
 **decimalScale:** 2<br/>
+
+
+## generator_started_date_time
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of generator_started_date_time is ' + status['generator_started_date_time'])
+```
+> the value of generator_started_date_time is 1970-01-01 00:00:00
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
 
 
 ## generator_status
@@ -397,6 +1890,42 @@ print('The value of generator_time_running_seconds is ' + status['generator_time
 **decimalScale:** 0<br/>
 
 
+## generator_total_lifetime_hours
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of generator_total_lifetime_hours is ' + status['generator_total_lifetime_hours'])
+```
+> the value of generator_total_lifetime_hours is 0
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**unitOfMeasure:** UNIT_HOUR<br/>
+**decimalScale:** 0<br/>
+
+
+## generator_total_time_running_since_reset_seconds
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of generator_total_time_running_since_reset_seconds is ' + status['generator_total_time_running_since_reset_seconds'])
+```
+> the value of generator_total_time_running_since_reset_seconds is 0
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**unitOfMeasure:** UNIT_HOUR<br/>
+**decimalScale:** 0<br/>
+
+
 ## generator_wattage_sum
 #### Example
 ```python
@@ -413,7 +1942,184 @@ print('The value of generator_wattage_sum is ' + status['generator_wattage_sum']
 **default:** 0<br/>
 **unitOfMeasure:** UNIT_KW<br/>
 **scalingFactor:** 0.001<br/>
-**decimalScale:** 1<br/>
+**decimalScale:** 2<br/>
+
+
+## grid_kw_max
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of grid_kw_max is ' + status['grid_kw_max'])
+```
+> the value of grid_kw_max is 10
+
+### Description
+**type:** number<br/>
+**default:** 10<br/>
+**decimalScale:** 0<br/>
+
+
+## grid_kw_min
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of grid_kw_min is ' + status['grid_kw_min'])
+```
+> the value of grid_kw_min is 0
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**decimalScale:** 0<br/>
+
+
+## grid_l1_apparent_power
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of grid_l1_apparent_power is ' + status['grid_l1_apparent_power'])
+```
+> the value of grid_l1_apparent_power is 7.0000000000E+00
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**unitOfMeasure:** UNIT_VOLT_AMPERE<br/>
+**decimalScale:** 2<br/>
+
+
+## grid_l1_dc_amps
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of grid_l1_dc_amps is ' + status['grid_l1_dc_amps'])
+```
+> the value of grid_l1_dc_amps is 1.9999999553E-02
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**unitOfMeasure:** UNIT_AMPERE<br/>
+**decimalScale:** 2<br/>
+
+
+## grid_l1_kwh_bought_today
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of grid_l1_kwh_bought_today is ' + status['grid_l1_kwh_bought_today'])
+```
+> the value of grid_l1_kwh_bought_today is 2.1895999908E+01
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**unitOfMeasure:** UNIT_KWH<br/>
+**decimalScale:** 2<br/>
+
+
+## grid_l1_kwh_sold_today
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of grid_l1_kwh_sold_today is ' + status['grid_l1_kwh_sold_today'])
+```
+> the value of grid_l1_kwh_sold_today is 1.6380000114E+00
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**unitOfMeasure:** UNIT_KWH<br/>
+**decimalScale:** 2<br/>
+
+
+## grid_l1_mwh_bought_lifetime
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of grid_l1_mwh_bought_lifetime is ' + status['grid_l1_mwh_bought_lifetime'])
+```
+> the value of grid_l1_mwh_bought_lifetime is 4.4292870164E-01
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**unitOfMeasure:** UNIT_MWH<br/>
+**decimalScale:** 2<br/>
+
+
+## grid_l1_mwh_sold_lifetime
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of grid_l1_mwh_sold_lifetime is ' + status['grid_l1_mwh_sold_lifetime'])
+```
+> the value of grid_l1_mwh_sold_lifetime is 2.0614467561E-02
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**unitOfMeasure:** UNIT_MWH<br/>
+**decimalScale:** 2<br/>
+
+
+## grid_l1_power_factor
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of grid_l1_power_factor is ' + status['grid_l1_power_factor'])
+```
+> the value of grid_l1_power_factor is 1.0000000000E+00
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**decimalScale:** 2<br/>
+
+
+## grid_l1_realtime_ac_amps
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of grid_l1_realtime_ac_amps is ' + status['grid_l1_realtime_ac_amps'])
+```
+> the value of grid_l1_realtime_ac_amps is 7.0000000298E-02
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**unitOfMeasure:** UNIT_AMPERE<br/>
+**decimalScale:** 2<br/>
 
 
 ## grid_l1_realtime_ac_voltage
@@ -425,7 +2131,7 @@ s = SkyboxAPI.SkyboxAPI()
 status = s.getStatus()
 print('The value of grid_l1_realtime_ac_voltage is ' + status['grid_l1_realtime_ac_voltage'])
 ```
-> the value of grid_l1_realtime_ac_voltage is 1.2169999695E+02
+> the value of grid_l1_realtime_ac_voltage is 1.2019999695E+02
 
 ### Description
 **type:** number<br/>
@@ -443,14 +2149,208 @@ s = SkyboxAPI.SkyboxAPI()
 status = s.getStatus()
 print('The value of grid_l1_realtime_wattage is ' + status['grid_l1_realtime_wattage'])
 ```
-> the value of grid_l1_realtime_wattage is 249
+> the value of grid_l1_realtime_wattage is -2399
 
 ### Description
 **type:** number<br/>
 **default:** 0<br/>
 **unitOfMeasure:** UNIT_KW<br/>
 **scalingFactor:** 0.001<br/>
-**decimalScale:** 1<br/>
+**decimalScale:** 2<br/>
+
+
+## grid_l1_voltage_variance_average
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of grid_l1_voltage_variance_average is ' + status['grid_l1_voltage_variance_average'])
+```
+> the value of grid_l1_voltage_variance_average is 1.2019999695E+02
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**decimalScale:** 2<br/>
+
+
+## grid_l1_voltage_variance_high
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of grid_l1_voltage_variance_high is ' + status['grid_l1_voltage_variance_high'])
+```
+> the value of grid_l1_voltage_variance_high is 1.2019999695E+02
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**decimalScale:** 2<br/>
+
+
+## grid_l1_voltage_variance_low
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of grid_l1_voltage_variance_low is ' + status['grid_l1_voltage_variance_low'])
+```
+> the value of grid_l1_voltage_variance_low is 1.2019999695E+02
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**decimalScale:** 2<br/>
+
+
+## grid_l2_apparent_power
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of grid_l2_apparent_power is ' + status['grid_l2_apparent_power'])
+```
+> the value of grid_l2_apparent_power is 7.0000000000E+00
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**unitOfMeasure:** UNIT_VOLT_AMPERE<br/>
+**decimalScale:** 2<br/>
+
+
+## grid_l2_dc_amps
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of grid_l2_dc_amps is ' + status['grid_l2_dc_amps'])
+```
+> the value of grid_l2_dc_amps is 0.0000000000E+00
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**unitOfMeasure:** UNIT_AMPERE<br/>
+**decimalScale:** 2<br/>
+
+
+## grid_l2_kwh_bought_today
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of grid_l2_kwh_bought_today is ' + status['grid_l2_kwh_bought_today'])
+```
+> the value of grid_l2_kwh_bought_today is 2.7246999741E+01
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**unitOfMeasure:** UNIT_KWH<br/>
+**decimalScale:** 2<br/>
+
+
+## grid_l2_kwh_sold_today
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of grid_l2_kwh_sold_today is ' + status['grid_l2_kwh_sold_today'])
+```
+> the value of grid_l2_kwh_sold_today is 7.2999998927E-02
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**unitOfMeasure:** UNIT_KWH<br/>
+**decimalScale:** 2<br/>
+
+
+## grid_l2_mwh_bought_lifetime
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of grid_l2_mwh_bought_lifetime is ' + status['grid_l2_mwh_bought_lifetime'])
+```
+> the value of grid_l2_mwh_bought_lifetime is 5.4245275259E-01
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**unitOfMeasure:** UNIT_MWH<br/>
+**decimalScale:** 2<br/>
+
+
+## grid_l2_mwh_sold_lifetime
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of grid_l2_mwh_sold_lifetime is ' + status['grid_l2_mwh_sold_lifetime'])
+```
+> the value of grid_l2_mwh_sold_lifetime is 8.8011128828E-03
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**unitOfMeasure:** UNIT_MWH<br/>
+**decimalScale:** 2<br/>
+
+
+## grid_l2_power_factor
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of grid_l2_power_factor is ' + status['grid_l2_power_factor'])
+```
+> the value of grid_l2_power_factor is 1.0000000000E+00
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**decimalScale:** 2<br/>
+
+
+## grid_l2_realtime_ac_amps
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of grid_l2_realtime_ac_amps is ' + status['grid_l2_realtime_ac_amps'])
+```
+> the value of grid_l2_realtime_ac_amps is 5.9999998659E-02
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**unitOfMeasure:** UNIT_AMPERE<br/>
+**decimalScale:** 2<br/>
 
 
 ## grid_l2_realtime_ac_voltage
@@ -462,7 +2362,7 @@ s = SkyboxAPI.SkyboxAPI()
 status = s.getStatus()
 print('The value of grid_l2_realtime_ac_voltage is ' + status['grid_l2_realtime_ac_voltage'])
 ```
-> the value of grid_l2_realtime_ac_voltage is 1.1959999847E+02
+> the value of grid_l2_realtime_ac_voltage is 1.2050000000E+02
 
 ### Description
 **type:** number<br/>
@@ -480,14 +2380,208 @@ s = SkyboxAPI.SkyboxAPI()
 status = s.getStatus()
 print('The value of grid_l2_realtime_wattage is ' + status['grid_l2_realtime_wattage'])
 ```
-> the value of grid_l2_realtime_wattage is -234
+> the value of grid_l2_realtime_wattage is -2542
 
 ### Description
 **type:** number<br/>
 **default:** 0<br/>
 **unitOfMeasure:** UNIT_KW<br/>
 **scalingFactor:** 0.001<br/>
-**decimalScale:** 1<br/>
+**decimalScale:** 2<br/>
+
+
+## grid_l2_voltage_variance_average
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of grid_l2_voltage_variance_average is ' + status['grid_l2_voltage_variance_average'])
+```
+> the value of grid_l2_voltage_variance_average is 1.2050000000E+02
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**decimalScale:** 2<br/>
+
+
+## grid_l2_voltage_variance_high
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of grid_l2_voltage_variance_high is ' + status['grid_l2_voltage_variance_high'])
+```
+> the value of grid_l2_voltage_variance_high is 1.2050000000E+02
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**decimalScale:** 2<br/>
+
+
+## grid_l2_voltage_variance_low
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of grid_l2_voltage_variance_low is ' + status['grid_l2_voltage_variance_low'])
+```
+> the value of grid_l2_voltage_variance_low is 1.2050000000E+02
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**decimalScale:** 2<br/>
+
+
+## grid_l3_apparent_power
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of grid_l3_apparent_power is ' + status['grid_l3_apparent_power'])
+```
+> the value of grid_l3_apparent_power is 0.0000000000E+00
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**unitOfMeasure:** UNIT_VOLT_AMPERE<br/>
+**decimalScale:** 2<br/>
+
+
+## grid_l3_dc_amps
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of grid_l3_dc_amps is ' + status['grid_l3_dc_amps'])
+```
+> the value of grid_l3_dc_amps is 0.0000000000E+00
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**unitOfMeasure:** UNIT_AMPERE<br/>
+**decimalScale:** 2<br/>
+
+
+## grid_l3_kwh_bought_today
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of grid_l3_kwh_bought_today is ' + status['grid_l3_kwh_bought_today'])
+```
+> the value of grid_l3_kwh_bought_today is 0.0000000000E+00
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**unitOfMeasure:** UNIT_KWH<br/>
+**decimalScale:** 2<br/>
+
+
+## grid_l3_kwh_sold_today
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of grid_l3_kwh_sold_today is ' + status['grid_l3_kwh_sold_today'])
+```
+> the value of grid_l3_kwh_sold_today is 0.0000000000E+00
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**unitOfMeasure:** UNIT_KWH<br/>
+**decimalScale:** 2<br/>
+
+
+## grid_l3_mwh_bought_lifetime
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of grid_l3_mwh_bought_lifetime is ' + status['grid_l3_mwh_bought_lifetime'])
+```
+> the value of grid_l3_mwh_bought_lifetime is 0.0000000000E+00
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**unitOfMeasure:** UNIT_MWH<br/>
+**decimalScale:** 2<br/>
+
+
+## grid_l3_mwh_sold_lifetime
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of grid_l3_mwh_sold_lifetime is ' + status['grid_l3_mwh_sold_lifetime'])
+```
+> the value of grid_l3_mwh_sold_lifetime is 0.0000000000E+00
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**unitOfMeasure:** UNIT_MWH<br/>
+**decimalScale:** 2<br/>
+
+
+## grid_l3_power_factor
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of grid_l3_power_factor is ' + status['grid_l3_power_factor'])
+```
+> the value of grid_l3_power_factor is 1.0000000000E+00
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**decimalScale:** 2<br/>
+
+
+## grid_l3_realtime_ac_amps
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of grid_l3_realtime_ac_amps is ' + status['grid_l3_realtime_ac_amps'])
+```
+> the value of grid_l3_realtime_ac_amps is 0.0000000000E+00
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**unitOfMeasure:** UNIT_AMPERE<br/>
+**decimalScale:** 2<br/>
 
 
 ## grid_l3_realtime_ac_voltage
@@ -524,7 +2618,93 @@ print('The value of grid_l3_realtime_wattage is ' + status['grid_l3_realtime_wat
 **default:** 0<br/>
 **unitOfMeasure:** UNIT_KW<br/>
 **scalingFactor:** 0.001<br/>
-**decimalScale:** 1<br/>
+**decimalScale:** 2<br/>
+
+
+## grid_l3_voltage_variance_average
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of grid_l3_voltage_variance_average is ' + status['grid_l3_voltage_variance_average'])
+```
+> the value of grid_l3_voltage_variance_average is 0.0000000000E+00
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**decimalScale:** 2<br/>
+
+
+## grid_l3_voltage_variance_high
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of grid_l3_voltage_variance_high is ' + status['grid_l3_voltage_variance_high'])
+```
+> the value of grid_l3_voltage_variance_high is 0.0000000000E+00
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**decimalScale:** 2<br/>
+
+
+## grid_l3_voltage_variance_low
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of grid_l3_voltage_variance_low is ' + status['grid_l3_voltage_variance_low'])
+```
+> the value of grid_l3_voltage_variance_low is 0.0000000000E+00
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**decimalScale:** 2<br/>
+
+
+## grid_measurement_status
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of grid_measurement_status is ' + status['grid_measurement_status'])
+```
+> the value of grid_measurement_status is 0
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**decimalScale:** 0<br/>
+
+
+## grid_realtime_ac_amps_sum
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of grid_realtime_ac_amps_sum is ' + status['grid_realtime_ac_amps_sum'])
+```
+> the value of grid_realtime_ac_amps_sum is 1.2999999523E-01
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**unitOfMeasure:** UNIT_AMPERE<br/>
+**decimalScale:** 2<br/>
 
 
 ## grid_realtime_frequency
@@ -536,7 +2716,7 @@ s = SkyboxAPI.SkyboxAPI()
 status = s.getStatus()
 print('The value of grid_realtime_frequency is ' + status['grid_realtime_frequency'])
 ```
-> the value of grid_realtime_frequency is 5.9986999512E+01
+> the value of grid_realtime_frequency is 6.0035999298E+01
 
 ### Description
 **type:** number<br/>
@@ -554,14 +2734,14 @@ s = SkyboxAPI.SkyboxAPI()
 status = s.getStatus()
 print('The value of grid_realtime_wattage_sum is ' + status['grid_realtime_wattage_sum'])
 ```
-> the value of grid_realtime_wattage_sum is 15
+> the value of grid_realtime_wattage_sum is -4941
 
 ### Description
 **type:** number<br/>
 **default:** 0<br/>
 **unitOfMeasure:** UNIT_KW<br/>
 **scalingFactor:** 0.001<br/>
-**decimalScale:** 1<br/>
+**decimalScale:** 2<br/>
 
 
 ## grid_sell_reconnect_timer
@@ -591,7 +2771,7 @@ s = SkyboxAPI.SkyboxAPI()
 status = s.getStatus()
 print('The value of grid_status is ' + status['grid_status'])
 ```
-> the value of grid_status is 3
+> the value of grid_status is 5
 
 ### Description
 **type:** string<br/>
@@ -1180,6 +3360,24 @@ print('The value of inverter_paralleling_units_discovered is ' + status['inverte
 **decimalScale:** 0<br/>
 
 
+## load_ac_current_sum
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of load_ac_current_sum is ' + status['load_ac_current_sum'])
+```
+> the value of load_ac_current_sum is 1.2999999523E-01
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**unitOfMeasure:** UNIT_AMPERE<br/>
+**decimalScale:** 2<br/>
+
+
 ## load_combined_l1_wattage
 #### Example
 ```python
@@ -1189,7 +3387,7 @@ s = SkyboxAPI.SkyboxAPI()
 status = s.getStatus()
 print('The value of load_combined_l1_wattage is ' + status['load_combined_l1_wattage'])
 ```
-> the value of load_combined_l1_wattage is 74
+> the value of load_combined_l1_wattage is 2399
 
 ### Description
 **type:** number<br/>
@@ -1208,7 +3406,7 @@ s = SkyboxAPI.SkyboxAPI()
 status = s.getStatus()
 print('The value of load_combined_l2_wattage is ' + status['load_combined_l2_wattage'])
 ```
-> the value of load_combined_l2_wattage is 548
+> the value of load_combined_l2_wattage is 2542
 
 ### Description
 **type:** number<br/>
@@ -1246,7 +3444,7 @@ s = SkyboxAPI.SkyboxAPI()
 status = s.getStatus()
 print('The value of load_combined_wattage_sum is ' + status['load_combined_wattage_sum'])
 ```
-> the value of load_combined_wattage_sum is 622
+> the value of load_combined_wattage_sum is 4941
 
 ### Description
 **type:** number<br/>
@@ -1254,6 +3452,763 @@ print('The value of load_combined_wattage_sum is ' + status['load_combined_watta
 **unitOfMeasure:** UNIT_KW<br/>
 **scalingFactor:** 0.001<br/>
 **decimalScale:** 2<br/>
+
+
+## load_consuming_total_kw_max
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of load_consuming_total_kw_max is ' + status['load_consuming_total_kw_max'])
+```
+> the value of load_consuming_total_kw_max is 20
+
+### Description
+**type:** number<br/>
+**default:** 20<br/>
+**decimalScale:** 0<br/>
+
+
+## load_consuming_total_kw_min
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of load_consuming_total_kw_min is ' + status['load_consuming_total_kw_min'])
+```
+> the value of load_consuming_total_kw_min is 0
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**decimalScale:** 0<br/>
+
+
+## load_l1_ac_amps
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of load_l1_ac_amps is ' + status['load_l1_ac_amps'])
+```
+> the value of load_l1_ac_amps is 1.0999999940E-01
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**unitOfMeasure:** UNIT_AMPERE<br/>
+**decimalScale:** 2<br/>
+
+
+## load_l1_ac_voltage
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of load_l1_ac_voltage is ' + status['load_l1_ac_voltage'])
+```
+> the value of load_l1_ac_voltage is 1.2009999847E+02
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**unitOfMeasure:** UNIT_VOLT<br/>
+**decimalScale:** 2<br/>
+
+
+## load_l1_apparent_power
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of load_l1_apparent_power is ' + status['load_l1_apparent_power'])
+```
+> the value of load_l1_apparent_power is 1.4000000000E+01
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**unitOfMeasure:** UNIT_VOLT_AMPERE<br/>
+**decimalScale:** 2<br/>
+
+
+## load_l1_dc_amps
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of load_l1_dc_amps is ' + status['load_l1_dc_amps'])
+```
+> the value of load_l1_dc_amps is 1.4800000191E+00
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**unitOfMeasure:** UNIT_AMPERE<br/>
+**decimalScale:** 2<br/>
+
+
+## load_l1_kwh_consumed_today
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of load_l1_kwh_consumed_today is ' + status['load_l1_kwh_consumed_today'])
+```
+> the value of load_l1_kwh_consumed_today is 2.4259000778E+01
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**unitOfMeasure:** UNIT_KWH<br/>
+**decimalScale:** 2<br/>
+
+
+## load_l1_kwh_produced_today
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of load_l1_kwh_produced_today is ' + status['load_l1_kwh_produced_today'])
+```
+> the value of load_l1_kwh_produced_today is 4.5000001788E-02
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**unitOfMeasure:** UNIT_KWH<br/>
+**decimalScale:** 2<br/>
+
+
+## load_l1_mwh_consumed_lifetime
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of load_l1_mwh_consumed_lifetime is ' + status['load_l1_mwh_consumed_lifetime'])
+```
+> the value of load_l1_mwh_consumed_lifetime is 5.0568646193E-01
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**unitOfMeasure:** UNIT_MWH<br/>
+**decimalScale:** 2<br/>
+
+
+## load_l1_mwh_produced_lifetime
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of load_l1_mwh_produced_lifetime is ' + status['load_l1_mwh_produced_lifetime'])
+```
+> the value of load_l1_mwh_produced_lifetime is 8.3800387802E-04
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**unitOfMeasure:** UNIT_MWH<br/>
+**decimalScale:** 2<br/>
+
+
+## load_l1_output_power_factor
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of load_l1_output_power_factor is ' + status['load_l1_output_power_factor'])
+```
+> the value of load_l1_output_power_factor is 1.0000000000E+00
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**decimalScale:** 2<br/>
+
+
+## load_l1_self_supply
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of load_l1_self_supply is ' + status['load_l1_self_supply'])
+```
+> the value of load_l1_self_supply is 0.0000000000E+00
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**unitOfMeasure:** UNIT_KW<br/>
+**scalingFactor:** 0.001<br/>
+**decimalScale:** 2<br/>
+
+
+## load_l1_self_supply_lifetime
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of load_l1_self_supply_lifetime is ' + status['load_l1_self_supply_lifetime'])
+```
+> the value of load_l1_self_supply_lifetime is 6.6474147141E-02
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**unitOfMeasure:** UNIT_MWH<br/>
+**decimalScale:** 2<br/>
+
+
+## load_l1_self_supply_today
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of load_l1_self_supply_today is ' + status['load_l1_self_supply_today'])
+```
+> the value of load_l1_self_supply_today is 2.4920001030E+00
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**unitOfMeasure:** UNIT_KWH<br/>
+**decimalScale:** 2<br/>
+
+
+## load_l1_wattage
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of load_l1_wattage is ' + status['load_l1_wattage'])
+```
+> the value of load_l1_wattage is 0
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**unitOfMeasure:** UNIT_KW<br/>
+**scalingFactor:** 0.001<br/>
+**decimalScale:** 2<br/>
+
+
+## load_l2_ac_amps
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of load_l2_ac_amps is ' + status['load_l2_ac_amps'])
+```
+> the value of load_l2_ac_amps is 1.9999999553E-02
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**unitOfMeasure:** UNIT_AMPERE<br/>
+**decimalScale:** 2<br/>
+
+
+## load_l2_ac_voltage
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of load_l2_ac_voltage is ' + status['load_l2_ac_voltage'])
+```
+> the value of load_l2_ac_voltage is 1.2050000000E+02
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**unitOfMeasure:** UNIT_VOLT<br/>
+**decimalScale:** 2<br/>
+
+
+## load_l2_apparent_power
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of load_l2_apparent_power is ' + status['load_l2_apparent_power'])
+```
+> the value of load_l2_apparent_power is 3.0000000000E+00
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**unitOfMeasure:** UNIT_VOLT_AMPERE<br/>
+**decimalScale:** 2<br/>
+
+
+## load_l2_dc_amps
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of load_l2_dc_amps is ' + status['load_l2_dc_amps'])
+```
+> the value of load_l2_dc_amps is 3.3000001311E-01
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**unitOfMeasure:** UNIT_AMPERE<br/>
+**decimalScale:** 2<br/>
+
+
+## load_l2_kwh_consumed_today
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of load_l2_kwh_consumed_today is ' + status['load_l2_kwh_consumed_today'])
+```
+> the value of load_l2_kwh_consumed_today is 3.1077999115E+01
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**unitOfMeasure:** UNIT_KWH<br/>
+**decimalScale:** 2<br/>
+
+
+## load_l2_kwh_produced_today
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of load_l2_kwh_produced_today is ' + status['load_l2_kwh_produced_today'])
+```
+> the value of load_l2_kwh_produced_today is 0.0000000000E+00
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**unitOfMeasure:** UNIT_KWH<br/>
+**decimalScale:** 2<br/>
+
+
+## load_l2_mwh_consumed_lifetime
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of load_l2_mwh_consumed_lifetime is ' + status['load_l2_mwh_consumed_lifetime'])
+```
+> the value of load_l2_mwh_consumed_lifetime is 6.1500924826E-01
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**unitOfMeasure:** UNIT_MWH<br/>
+**decimalScale:** 2<br/>
+
+
+## load_l2_mwh_produced_lifetime
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of load_l2_mwh_produced_lifetime is ' + status['load_l2_mwh_produced_lifetime'])
+```
+> the value of load_l2_mwh_produced_lifetime is 0.0000000000E+00
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**unitOfMeasure:** UNIT_MWH<br/>
+**decimalScale:** 2<br/>
+
+
+## load_l2_output_power_factor
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of load_l2_output_power_factor is ' + status['load_l2_output_power_factor'])
+```
+> the value of load_l2_output_power_factor is 1.0000000000E+00
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**decimalScale:** 2<br/>
+
+
+## load_l2_self_supply
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of load_l2_self_supply is ' + status['load_l2_self_supply'])
+```
+> the value of load_l2_self_supply is 0.0000000000E+00
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**unitOfMeasure:** UNIT_KW<br/>
+**scalingFactor:** 0.001<br/>
+**decimalScale:** 2<br/>
+
+
+## load_l2_self_supply_lifetime
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of load_l2_self_supply_lifetime is ' + status['load_l2_self_supply_lifetime'])
+```
+> the value of load_l2_self_supply_lifetime is 7.6204463840E-02
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**unitOfMeasure:** UNIT_MWH<br/>
+**decimalScale:** 2<br/>
+
+
+## load_l2_self_supply_today
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of load_l2_self_supply_today is ' + status['load_l2_self_supply_today'])
+```
+> the value of load_l2_self_supply_today is 3.9549999237E+00
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**unitOfMeasure:** UNIT_KWH<br/>
+**decimalScale:** 2<br/>
+
+
+## load_l2_wattage
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of load_l2_wattage is ' + status['load_l2_wattage'])
+```
+> the value of load_l2_wattage is 0
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**unitOfMeasure:** UNIT_KW<br/>
+**scalingFactor:** 0.001<br/>
+**decimalScale:** 2<br/>
+
+
+## load_l3_ac_amps
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of load_l3_ac_amps is ' + status['load_l3_ac_amps'])
+```
+> the value of load_l3_ac_amps is 0.0000000000E+00
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**unitOfMeasure:** UNIT_AMPERE<br/>
+**decimalScale:** 2<br/>
+
+
+## load_l3_ac_voltage
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of load_l3_ac_voltage is ' + status['load_l3_ac_voltage'])
+```
+> the value of load_l3_ac_voltage is 0.0000000000E+00
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**unitOfMeasure:** UNIT_VOLT<br/>
+**decimalScale:** 2<br/>
+
+
+## load_l3_apparent_power
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of load_l3_apparent_power is ' + status['load_l3_apparent_power'])
+```
+> the value of load_l3_apparent_power is 0.0000000000E+00
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**unitOfMeasure:** UNIT_VOLT_AMPERE<br/>
+**decimalScale:** 2<br/>
+
+
+## load_l3_dc_amps
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of load_l3_dc_amps is ' + status['load_l3_dc_amps'])
+```
+> the value of load_l3_dc_amps is 0.0000000000E+00
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**unitOfMeasure:** UNIT_AMPERE<br/>
+**decimalScale:** 2<br/>
+
+
+## load_l3_kwh_consumed_today
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of load_l3_kwh_consumed_today is ' + status['load_l3_kwh_consumed_today'])
+```
+> the value of load_l3_kwh_consumed_today is 0.0000000000E+00
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**unitOfMeasure:** UNIT_KWH<br/>
+**decimalScale:** 2<br/>
+
+
+## load_l3_kwh_produced_today
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of load_l3_kwh_produced_today is ' + status['load_l3_kwh_produced_today'])
+```
+> the value of load_l3_kwh_produced_today is 0.0000000000E+00
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**unitOfMeasure:** UNIT_KWH<br/>
+**decimalScale:** 2<br/>
+
+
+## load_l3_mwh_consumed_lifetime
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of load_l3_mwh_consumed_lifetime is ' + status['load_l3_mwh_consumed_lifetime'])
+```
+> the value of load_l3_mwh_consumed_lifetime is 0.0000000000E+00
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**unitOfMeasure:** UNIT_MWH<br/>
+**decimalScale:** 2<br/>
+
+
+## load_l3_mwh_produced_lifetime
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of load_l3_mwh_produced_lifetime is ' + status['load_l3_mwh_produced_lifetime'])
+```
+> the value of load_l3_mwh_produced_lifetime is 0.0000000000E+00
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**unitOfMeasure:** UNIT_MWH<br/>
+**decimalScale:** 2<br/>
+
+
+## load_l3_output_power_factor
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of load_l3_output_power_factor is ' + status['load_l3_output_power_factor'])
+```
+> the value of load_l3_output_power_factor is 1.0000000000E+00
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**decimalScale:** 2<br/>
+
+
+## load_l3_self_supply
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of load_l3_self_supply is ' + status['load_l3_self_supply'])
+```
+> the value of load_l3_self_supply is 0.0000000000E+00
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**unitOfMeasure:** UNIT_KW<br/>
+**scalingFactor:** 0.001<br/>
+**decimalScale:** 2<br/>
+
+
+## load_l3_self_supply_lifetime
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of load_l3_self_supply_lifetime is ' + status['load_l3_self_supply_lifetime'])
+```
+> the value of load_l3_self_supply_lifetime is 0.0000000000E+00
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**unitOfMeasure:** UNIT_MWH<br/>
+**decimalScale:** 2<br/>
+
+
+## load_l3_self_supply_today
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of load_l3_self_supply_today is ' + status['load_l3_self_supply_today'])
+```
+> the value of load_l3_self_supply_today is 0.0000000000E+00
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**unitOfMeasure:** UNIT_KWH<br/>
+**decimalScale:** 2<br/>
+
+
+## load_l3_wattage
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of load_l3_wattage is ' + status['load_l3_wattage'])
+```
+> the value of load_l3_wattage is 0
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**unitOfMeasure:** UNIT_KW<br/>
+**scalingFactor:** 0.001<br/>
+**decimalScale:** 2<br/>
+
+
+## load_percentage_inverter_capacity
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of load_percentage_inverter_capacity is ' + status['load_percentage_inverter_capacity'])
+```
+> the value of load_percentage_inverter_capacity is 0
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**unitOfMeasure:** UNIT_PERCENT<br/>
+**decimalScale:** 0<br/>
 
 
 ## load_realtime_frequency
@@ -1283,7 +4238,7 @@ s = SkyboxAPI.SkyboxAPI()
 status = s.getStatus()
 print('The value of load_status is ' + status['load_status'])
 ```
-> the value of load_status is 1
+> the value of load_status is 3
 
 ### Description
 **type:** string<br/>
@@ -1294,6 +4249,137 @@ print('The value of load_status is ' + status['load_status'])
 * 2 -> SUPPORT
 * 3 -> PASS_THROUGH
 * 4 -> AC_COUPLE
+
+
+## load_total_self_supply
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of load_total_self_supply is ' + status['load_total_self_supply'])
+```
+> the value of load_total_self_supply is 0.0000000000E+00
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**unitOfMeasure:** UNIT_KW<br/>
+**scalingFactor:** 0.001<br/>
+**decimalScale:** 2<br/>
+
+
+## load_total_self_supply_lifetime
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of load_total_self_supply_lifetime is ' + status['load_total_self_supply_lifetime'])
+```
+> the value of load_total_self_supply_lifetime is 1.5148065984E-01
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**unitOfMeasure:** UNIT_MWH<br/>
+**decimalScale:** 2<br/>
+
+
+## load_total_self_supply_today
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of load_total_self_supply_today is ' + status['load_total_self_supply_today'])
+```
+> the value of load_total_self_supply_today is 7.7899999619E+00
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**unitOfMeasure:** UNIT_KWH<br/>
+**decimalScale:** 2<br/>
+
+
+## load_unprotected_l1_wattage
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of load_unprotected_l1_wattage is ' + status['load_unprotected_l1_wattage'])
+```
+> the value of load_unprotected_l1_wattage is 2399
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**unitOfMeasure:** UNIT_KW<br/>
+**scalingFactor:** 0.001<br/>
+**decimalScale:** 2<br/>
+
+
+## load_unprotected_l2_wattage
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of load_unprotected_l2_wattage is ' + status['load_unprotected_l2_wattage'])
+```
+> the value of load_unprotected_l2_wattage is 2542
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**unitOfMeasure:** UNIT_KW<br/>
+**scalingFactor:** 0.001<br/>
+**decimalScale:** 2<br/>
+
+
+## load_unprotected_l3_wattage
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of load_unprotected_l3_wattage is ' + status['load_unprotected_l3_wattage'])
+```
+> the value of load_unprotected_l3_wattage is 0
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**unitOfMeasure:** UNIT_KW<br/>
+**scalingFactor:** 0.001<br/>
+**decimalScale:** 2<br/>
+
+
+## load_wattage_sum
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of load_wattage_sum is ' + status['load_wattage_sum'])
+```
+> the value of load_wattage_sum is 0
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**unitOfMeasure:** UNIT_KW<br/>
+**scalingFactor:** 0.001<br/>
+**decimalScale:** 2<br/>
 
 
 ## network_optics_status
@@ -1336,6 +4422,60 @@ print('The value of network_placeholder_skybox_count is ' + status['network_plac
 **decimalScale:** 0<br/>
 
 
+## pv_array_temperature_realtime_celsius
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of pv_array_temperature_realtime_celsius is ' + status['pv_array_temperature_realtime_celsius'])
+```
+> the value of pv_array_temperature_realtime_celsius is 0
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**unitOfMeasure:** UNIT_CELSIUS<br/>
+**decimalScale:** 0<br/>
+
+
+## pv_bb_input_voltage
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of pv_bb_input_voltage is ' + status['pv_bb_input_voltage'])
+```
+> the value of pv_bb_input_voltage is 5.5334889889E-01
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**unitOfMeasure:** UNIT_VOLT<br/>
+**decimalScale:** 2<br/>
+
+
+## pv_input_current
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of pv_input_current is ' + status['pv_input_current'])
+```
+> the value of pv_input_current is 0.0000000000E+00
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**unitOfMeasure:** UNIT_AMPERE<br/>
+**decimalScale:** 2<br/>
+
+
 ## pv_input_power
 #### Example
 ```python
@@ -1345,14 +4485,14 @@ s = SkyboxAPI.SkyboxAPI()
 status = s.getStatus()
 print('The value of pv_input_power is ' + status['pv_input_power'])
 ```
-> the value of pv_input_power is 7.5827526855E+02
+> the value of pv_input_power is 0.0000000000E+00
 
 ### Description
 **type:** number<br/>
 **default:** 0<br/>
 **unitOfMeasure:** UNIT_KW<br/>
 **scalingFactor:** 0.001<br/>
-**decimalScale:** 1<br/>
+**decimalScale:** 2<br/>
 
 
 ## pv_kwh_today
@@ -1364,7 +4504,7 @@ s = SkyboxAPI.SkyboxAPI()
 status = s.getStatus()
 print('The value of pv_kwh_today is ' + status['pv_kwh_today'])
 ```
-> the value of pv_kwh_today is 5.1325979233E+00
+> the value of pv_kwh_today is 9.1020164490E+00
 
 ### Description
 **type:** number<br/>
@@ -1407,6 +4547,44 @@ print('The value of pv_max_voc_voltage is ' + status['pv_max_voc_voltage'])
 **decimalScale:** 2<br/>
 
 
+## pv_measurement_status
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of pv_measurement_status is ' + status['pv_measurement_status'])
+```
+> the value of pv_measurement_status is 0
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**decimalScale:** 0<br/>
+
+
+## pv_mpp_state
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of pv_mpp_state is ' + status['pv_mpp_state'])
+```
+> the value of pv_mpp_state is 0
+
+### Description
+**type:** string<br/>
+**default:** 0<br/>
+#### Possible Values (Enumeration)
+* 0 -> OFF
+* 1 -> TRACKING
+* 2 -> NETZERO
+* 3 -> POWER_LIMITED
+
+
 ## pv_mwh_lifetime
 #### Example
 ```python
@@ -1416,12 +4594,66 @@ s = SkyboxAPI.SkyboxAPI()
 status = s.getStatus()
 print('The value of pv_mwh_lifetime is ' + status['pv_mwh_lifetime'])
 ```
-> the value of pv_mwh_lifetime is 1.7283636332E-01
+> the value of pv_mwh_lifetime is 1.8664027750E-01
 
 ### Description
 **type:** number<br/>
 **default:** 0<br/>
 **unitOfMeasure:** UNIT_MWH<br/>
+**decimalScale:** 2<br/>
+
+
+## pv_output_current_dc
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of pv_output_current_dc is ' + status['pv_output_current_dc'])
+```
+> the value of pv_output_current_dc is 2.9377471656E-02
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**unitOfMeasure:** UNIT_AMPERE<br/>
+**decimalScale:** 2<br/>
+
+
+## pv_output_power_dc
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of pv_output_power_dc is ' + status['pv_output_power_dc'])
+```
+> the value of pv_output_power_dc is 9.0553846359E+00
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**unitOfMeasure:** UNIT_KW<br/>
+**decimalScale:** 2<br/>
+
+
+## pv_output_voltage_dc
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of pv_output_voltage_dc is ' + status['pv_output_voltage_dc'])
+```
+> the value of pv_output_voltage_dc is 3.0842050171E+02
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**unitOfMeasure:** UNIT_VOLT<br/>
 **decimalScale:** 2<br/>
 
 
@@ -1459,6 +4691,110 @@ print('The value of pv_peak_power_wattage is ' + status['pv_peak_power_wattage']
 **decimalScale:** 2<br/>
 
 
+## pv_pmb_ird_ratio_a
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of pv_pmb_ird_ratio_a is ' + status['pv_pmb_ird_ratio_a'])
+```
+> the value of pv_pmb_ird_ratio_a is 0.0000000000E+00
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**decimalScale:** 2<br/>
+
+
+## pv_pmb_ird_ratio_b
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of pv_pmb_ird_ratio_b is ' + status['pv_pmb_ird_ratio_b'])
+```
+> the value of pv_pmb_ird_ratio_b is 0.0000000000E+00
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**decimalScale:** 2<br/>
+
+
+## pv_pmb_positive_voltage
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of pv_pmb_positive_voltage is ' + status['pv_pmb_positive_voltage'])
+```
+> the value of pv_pmb_positive_voltage is 8.1999998093E+00
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**unitOfMeasure:** UNIT_VOLT<br/>
+**decimalScale:** 2<br/>
+
+
+## pv_pmb_voltage
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of pv_pmb_voltage is ' + status['pv_pmb_voltage'])
+```
+> the value of pv_pmb_voltage is 1.5100000381E+01
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**unitOfMeasure:** UNIT_VOLT<br/>
+**decimalScale:** 2<br/>
+
+
+## pv_production_realtime_kw_max
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of pv_production_realtime_kw_max is ' + status['pv_production_realtime_kw_max'])
+```
+> the value of pv_production_realtime_kw_max is 6
+
+### Description
+**type:** number<br/>
+**default:** 6<br/>
+**decimalScale:** 0<br/>
+
+
+## pv_production_realtime_kw_min
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of pv_production_realtime_kw_min is ' + status['pv_production_realtime_kw_min'])
+```
+> the value of pv_production_realtime_kw_min is 0
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**decimalScale:** 0<br/>
+
+
 ## pv_status
 #### Example
 ```python
@@ -1468,7 +4804,7 @@ s = SkyboxAPI.SkyboxAPI()
 status = s.getStatus()
 print('The value of pv_status is ' + status['pv_status'])
 ```
-> the value of pv_status is 1
+> the value of pv_status is 3
 
 ### Description
 **type:** string<br/>
@@ -1481,6 +4817,207 @@ print('The value of pv_status is ' + status['pv_status'])
 * 4 -> FAULT
 * 5 -> SWEEPING
 * 6 -> TESTING
+
+
+## pv_temperature_bb
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of pv_temperature_bb is ' + status['pv_temperature_bb'])
+```
+> the value of pv_temperature_bb is 37
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**unitOfMeasure:** UNIT_CELSIUS<br/>
+**decimalScale:** 0<br/>
+
+
+## pv_temperature_inductor
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of pv_temperature_inductor is ' + status['pv_temperature_inductor'])
+```
+> the value of pv_temperature_inductor is 37
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**unitOfMeasure:** UNIT_CELSIUS<br/>
+**decimalScale:** 0<br/>
+
+
+## pv_temperature_lenso
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of pv_temperature_lenso is ' + status['pv_temperature_lenso'])
+```
+> the value of pv_temperature_lenso is 37
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**unitOfMeasure:** UNIT_CELSIUS<br/>
+**decimalScale:** 0<br/>
+
+
+## rt_action_enable_afci_test
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of rt_action_enable_afci_test is ' + status['rt_action_enable_afci_test'])
+```
+> the value of rt_action_enable_afci_test is false
+
+### Description
+**type:** boolean<br/>
+**default:** false<br/>
+
+
+## rt_action_enable_gfdi_test
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of rt_action_enable_gfdi_test is ' + status['rt_action_enable_gfdi_test'])
+```
+> the value of rt_action_enable_gfdi_test is false
+
+### Description
+**type:** boolean<br/>
+**default:** false<br/>
+
+
+## rt_action_enable_ird_test
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of rt_action_enable_ird_test is ' + status['rt_action_enable_ird_test'])
+```
+> the value of rt_action_enable_ird_test is false
+
+### Description
+**type:** boolean<br/>
+**default:** false<br/>
+
+
+## rt_last_ran_time_afci
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of rt_last_ran_time_afci is ' + status['rt_last_ran_time_afci'])
+```
+> the value of rt_last_ran_time_afci is 1629715500
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**decimalScale:** 0<br/>
+
+
+## rt_last_ran_time_gfdi
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of rt_last_ran_time_gfdi is ' + status['rt_last_ran_time_gfdi'])
+```
+> the value of rt_last_ran_time_gfdi is 1629715499
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**decimalScale:** 0<br/>
+
+
+## rt_last_ran_time_ird
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of rt_last_ran_time_ird is ' + status['rt_last_ran_time_ird'])
+```
+> the value of rt_last_ran_time_ird is 1629715495
+
+### Description
+**type:** number<br/>
+**default:** 0<br/>
+**decimalScale:** 0<br/>
+
+
+## rt_test_result_afci
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of rt_test_result_afci is ' + status['rt_test_result_afci'])
+```
+> the value of rt_test_result_afci is true
+
+### Description
+**type:** boolean<br/>
+**default:** false<br/>
+
+
+## rt_test_result_gfdi
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of rt_test_result_gfdi is ' + status['rt_test_result_gfdi'])
+```
+> the value of rt_test_result_gfdi is true
+
+### Description
+**type:** boolean<br/>
+**default:** false<br/>
+
+
+## rt_test_result_ird
+#### Example
+```python
+import json
+import SkyboxAPI
+s = SkyboxAPI.SkyboxAPI()
+status = s.getStatus()
+print('The value of rt_test_result_ird is ' + status['rt_test_result_ird'])
+```
+> the value of rt_test_result_ird is true
+
+### Description
+**type:** boolean<br/>
+**default:** false<br/>
 
 
 ## schema_version_number
@@ -1508,7 +5045,7 @@ s = SkyboxAPI.SkyboxAPI()
 status = s.getStatus()
 print('The value of time_stamp is ' + status['time_stamp'])
 ```
-> the value of time_stamp is 2021-08-22 10:54:53
+> the value of time_stamp is 2021-08-24 01:59:47
 
 ### Description
 **type:** string<br/>
@@ -1524,13 +5061,15 @@ s = SkyboxAPI.SkyboxAPI()
 status = s.getStatus()
 print('The value of time_stamp_utc is ' + status['time_stamp_utc'])
 ```
-> the value of time_stamp_utc is 1629629693
+> the value of time_stamp_utc is 1629770387
 
 ### Description
 **type:** number<br/>
 **default:** 0<br/>
 **unitOfMeasure:** UNIT_SECOND<br/>
 **decimalScale:** 0<br/>
+
+
 
 
 
