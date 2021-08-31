@@ -21,6 +21,7 @@ def main(argv=None):
             bucket = config["bucket"]
             url = config["url"]
             skyboxurl = config["skyboxurl"]
+            sleeptime = int(config["sleeptime"])
     
             client = InfluxDBClient(url=url, token=token, verify_ssl=False)
             
@@ -48,7 +49,7 @@ def main(argv=None):
                 except:
                     traceback.print_exc()
     
-                time.sleep(60)
+                time.sleep(sleeptime)
         except:
             traceback.print_exc()
             time.sleep(60) 
