@@ -4,7 +4,7 @@ import sys
 import time
 import datetime  
 import traceback
-from datetime import datetime
+from datetime import date, datetime
 from influxdb_client import InfluxDBClient, Point, WritePrecision
 from influxdb_client.client.write_api import SYNCHRONOUS
 import SkyboxAPI
@@ -14,16 +14,18 @@ import SkyboxAPI
 def main(argv=None): 
     while True:
         try:
-            f = open('config.json' "r") 
+            f = open('config.json', "r") 
             config = json.load(f)
             token = config["token"]
             org = config["org"]
             bucket = config["bucket"]
+            url = config["url"]
+            skyboxurl = config["skyboxurl"]
     
-            client = InfluxDBClient(url="https://us-east-1-1.aws.cloud2.influxdata.com", token=token, verify_ssl=False)
+            client = InfluxDBClient(url=url, token=token, verify_ssl=False)
             
             s = SkyboxAPI.SkyboxAPI()
-            loginStatus = s.login("http://192.168.1.142:3000") 
+            loginStatus = s.login(skyboxurl) 
             while True:
                 try:
                     status = s.getStatus()
@@ -36,11 +38,11 @@ def main(argv=None):
                             except:
                                 pass
                 except:
-                    loginStatus = s.login("http://192.168.1.142:3000") 
-                print(infuxInsertString)
+                    loginStatus = s.login(skyboxurl) 
                 try:
                     write_api = client.write_api(write_options=SYNCHRONOUS)
                     write_api.write(bucket, org, infuxInsertString.rstrip(','))
+                    print( str(datetime.now()) + ": uploaded to influxDB")
                 except:
                     traceback.print_exc()
     
