@@ -25,6 +25,7 @@ def main(argv=None):
             client = InfluxDBClient(url=url, token=token, verify_ssl=False)
             
             s = SkyboxAPI.SkyboxAPI()
+            print("logging into " +  skyboxurl)
             loginStatus = s.login(skyboxurl) 
             while True:
                 try:
@@ -38,11 +39,12 @@ def main(argv=None):
                             except:
                                 pass
                 except:
+                    print("error, retrying logging into " +  skyboxurl)
                     loginStatus = s.login(skyboxurl) 
                 try:
                     write_api = client.write_api(write_options=SYNCHRONOUS)
                     write_api.write(bucket, org, infuxInsertString.rstrip(','))
-                    print( str(datetime.now()) + ": uploaded to influxDB")
+                    print( str(datetime.now()) + ": uploaded to influxDB -> " + infuxInsertString[0:50] + "..." + infuxInsertString[-50:])
                 except:
                     traceback.print_exc()
     
