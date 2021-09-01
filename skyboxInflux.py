@@ -2,7 +2,6 @@
 import json
 import sys
 import time
-import datetime  
 import traceback
 from datetime import date, datetime
 from influxdb_client import InfluxDBClient, Point, WritePrecision
@@ -31,7 +30,11 @@ def main(argv=None):
             while True:
                 try:
                     status = s.getStatus()
-                    infuxInsertString = "skybox "
+                    alert =  s.getAlerts()[0]
+                    notifcation =  s.getNotifications()[0]
+                    infuxInsertString = "skybox lastNotice=\"" + str(datetime.fromtimestamp(int(notifcation["Timestamp"])/1000))  + " " + notifcation["Message"] + "\","
+                    infuxInsertString += "lastAlert=\"" +  str(datetime.fromtimestamp(int(alert["Timestamp"])/1000))  + " " + alert["Message"] + "\","
+                    
                     for e in sorted(status):
                         if not e.endswith("_property"):
                             try:
@@ -41,6 +44,7 @@ def main(argv=None):
                                 pass
                 except:
                     print("error, retrying logging into " +  skyboxurl)
+                    traceback.print_exc()
                     loginStatus = s.login(skyboxurl) 
                 try:
                     write_api = client.write_api(write_options=SYNCHRONOUS)
