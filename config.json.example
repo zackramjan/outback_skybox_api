@@ -1,0 +1,8 @@
+{
+    "token" : "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX==",
+    "org" : "XXXXXXX@gmail.com",
+    "bucket": "MY Bucket",
+    "url" : "https://us-east-1-1.aws.cloud2.influxdata.com",
+    "skyboxurl" : "http://192.168.1.142:3000",
+    "sleeptime" : "10"
+}
