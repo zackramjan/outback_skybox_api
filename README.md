@@ -51,6 +51,14 @@ the following snippet shows the basics:
 ```    
 
 
+# Sending data to influxDB for visualization in influx/grafana 
+
+**See skyboxInfux.py**
+
+basically, we pull all metrics and then send them to a free cloud instance of influxDB. Your key and influx parameters are specific in the config.json ( see example). In my home setup, I have script running in a docker container (see DockerFile) and uploaded every 10seconds. We use line protocol with influx to keep things simple and straightforward
+
+
+
 
 
 # Skybox Available Metrics Reference
