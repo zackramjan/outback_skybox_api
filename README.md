@@ -57,7 +57,8 @@ the following snippet shows the basics:
 
 basically, we pull all metrics and then send them to a free cloud instance of influxDB. Your key and influx parameters are specific in the config.json ( see example). In my home setup, I have script running in a docker container (see DockerFile) and uploaded every 10seconds. We use line protocol with influx to keep things simple and straightforward
 
-
+## Dashboarding on influbdb
+One the data is up at influx db, it can be easily viewed as a dashboard. My definition is in influxDashboard.json and looks like the following:
 
 
 
