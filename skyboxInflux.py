@@ -6,6 +6,7 @@ import traceback
 from datetime import date, datetime
 from influxdb_client import InfluxDBClient, Point, WritePrecision
 from influxdb_client.client.write_api import SYNCHRONOUS
+from pyHS100 import SmartPlug, SmartBulb
 import SkyboxAPI
 
 
@@ -42,6 +43,39 @@ def main(argv=None):
                                 infuxInsertString += e + "=" +  status[e].lower() + ","
                             except:
                                 pass
+                    
+                    #check for curtailment, and if so, add load via space heaters
+                    try:
+                        plug1 = SmartPlug("192.168.1.131")
+                        plug2 = SmartPlug("192.168.1.132")
+                        if(float(status['pv_bb_input_voltage']) > 350.0 and 
+                            float(status['grid_realtime_wattage_sum']) > -700.0 and 
+                            float(status['battery_watts']) > -70.0 and
+                            float(status['battery_watts']) < 70.0
+                        ):
+                            if "OFF" in plug1.state:
+                                plug1.turn_on()
+                                print(str(datetime.now()) + "Turning kasa plug 1 on")
+                            elif "OFF" in plug2.state:
+                                plug2.turn_on()
+                                print(str(datetime.now()) + "Turning kasa plug 2 on")
+                        elif float(status['pv_bb_input_voltage']) > 200.0:
+                            if "ON" in plug2.state:
+                                plug2.turn_off()
+                                print(str(datetime.now()) + "Turning kasa plug 2 off")
+                            elif "ON" in plug1.state:
+                                plug1.turn_off()
+                                print(str(datetime.now()) + "Turning kasa plug 1 off")
+                            
+                    except:
+                       print("Error changing space heater load (KASA PLUG 1 or 2)") 
+                       traceback.print_exc()
+
+
+
+
+
+                                
                 except:
                     print("error, retrying logging into " +  skyboxurl)
                     traceback.print_exc()
