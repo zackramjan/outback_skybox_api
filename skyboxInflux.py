@@ -11,6 +11,9 @@ from requests.packages.urllib3.exceptions import InsecureRequestWarning
 from pyHS100 import SmartPlug, SmartBulb
 import SkyboxAPI
 
+def logIt(msg):
+    print(msg, file=sys.stderr, flush=True)
+
 #this is an example usage of the SkyboxAPI to retrieve and print various metrics
 def main(argv=None): 
     while True:
@@ -27,7 +30,7 @@ def main(argv=None):
             client = InfluxDBClient(url=url, token=token, verify_ssl=False)
             
             s = SkyboxAPI.SkyboxAPI()
-            print("logging into " +  skyboxurl, file=sys.stderr)
+            logIt("logging into " +  skyboxurl)
             loginStatus = s.login(skyboxurl) 
             while True:
                 try:
@@ -56,35 +59,35 @@ def main(argv=None):
                         ):
                             if "OFF" in plug1.state:
                                 plug1.turn_on()
-                                print(str(datetime.now()) + "Turning kasa plug 1 on", file=sys.stderr)
+                                infuxInsertString += "lastNotice" + "=\"" +  str(datetime.now()) + "Turning Kasa 1 on\","
+                                logIt(str(datetime.now()) + "Turning kasa plug 1 on")
                             elif "OFF" in plug2.state:
                                 plug2.turn_on()
-                                print(str(datetime.now()) + "Turning kasa plug 2 on", file=sys.stderr)
+                                infuxInsertString += "lastNotice" + "=\"" +  str(datetime.now()) + "Turning Kasa 2 on\","
+                                logIt(str(datetime.now()) + "Turning kasa plug 2 on")
                         elif float(status['pv_bb_input_voltage']) > 200.0:
                             if "ON" in plug2.state:
                                 plug2.turn_off()
-                                print(str(datetime.now()) + "Turning kasa plug 2 off", file=sys.stderr)
+                                infuxInsertString += "lastNotice" + "=\"" +  str(datetime.now()) + "Turning Kasa 1 off\","
+                                logIt(str(datetime.now()) + "Turning kasa plug 2 off")
                             elif "ON" in plug1.state:
                                 plug1.turn_off()
-                                print(str(datetime.now()) + "Turning kasa plug 1 off", file=sys.stderr)
+                                infuxInsertString += "lastNotice" + "=\"" +  str(datetime.now()) + "Turning Kasa 1 off\","
+                                logIt(str(datetime.now()) + "Turning kasa plug 1 off")
                             
                     except:
-                       print("Error changing space heater load (KASA PLUG 1 or 2)", file=sys.stderr) 
+                       logIt("Error changing space heater load (KASA PLUG 1 or 2)")
                        traceback.print_exc()
-
-
-
-
 
                                 
                 except:
-                    print("error, retrying logging into " +  skyboxurl, file=sys.stderr)
+                    logIt("error, retrying logging into " +  skyboxurl)
                     traceback.print_exc()
                     loginStatus = s.login(skyboxurl) 
                 try:
                     write_api = client.write_api(write_options=SYNCHRONOUS)
                     write_api.write(bucket, org, infuxInsertString.rstrip(','))
-                    print( str(datetime.now()) + ": uploaded to influxDB -> " + infuxInsertString[0:50] + "..." + infuxInsertString[-50:], file=sys.stderr)
+                    logIt( str(datetime.now()) + ": uploaded to influxDB -> " + infuxInsertString[0:50] + "..." + infuxInsertString[-50:])
                 except:
                     traceback.print_exc()
     
@@ -93,7 +96,6 @@ def main(argv=None):
             traceback.print_exc()
             time.sleep(60) 
  
-    
     
 requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
 if __name__ == '__main__':
