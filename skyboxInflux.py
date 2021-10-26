@@ -12,7 +12,7 @@ from pyHS100 import SmartPlug, SmartBulb
 import SkyboxAPI
 
 def logIt(msg):
-    print(msg, file=sys.stderr, flush=True)
+    print(str(datetime.now()) + ": " + msg, file=sys.stderr, flush=True)
 
 #this is an example usage of the SkyboxAPI to retrieve and print various metrics
 def main(argv=None): 
@@ -52,28 +52,31 @@ def main(argv=None):
                     try:
                         plug1 = SmartPlug("192.168.1.131")
                         plug2 = SmartPlug("192.168.1.132")
-                        if(float(status['pv_bb_input_voltage']) > 350.0 and 
+                        if(float(status['pv_bb_input_voltage']) > 345.0 and 
                             float(status['grid_realtime_wattage_sum']) > -700.0 and 
-                            float(status['battery_watts']) > -70.0 and
-                            float(status['battery_watts']) < 70.0
+                            float(status['battery_watts']) > -100.0 and
+                            float(status['battery_watts']) < 100.0
                         ):
                             if "OFF" in plug1.state:
                                 plug1.turn_on()
-                                infuxInsertString += "lastNotice" + "=\"" +  str(datetime.now()) + "Turning Kasa 1 on\","
-                                logIt(str(datetime.now()) + "Turning kasa plug 1 on")
+                                infuxInsertString += "lastNotice" + "=\"" +  str(datetime.now()) + " Turning Kasa 1 on\","
+                                logIt("Turning kasa plug 1 on")
                             elif "OFF" in plug2.state:
                                 plug2.turn_on()
-                                infuxInsertString += "lastNotice" + "=\"" +  str(datetime.now()) + "Turning Kasa 2 on\","
-                                logIt(str(datetime.now()) + "Turning kasa plug 2 on")
-                        elif float(status['pv_bb_input_voltage']) > 200.0:
+                                infuxInsertString += "lastNotice" + "=\"" +  str(datetime.now()) + " Turning Kasa 2 on\","
+                                logIt("Turning kasa plug 2 on")
+                        elif(float(status['grid_realtime_wattage_sum']) < -700.0 or 
+                            float(status['battery_watts']) < -200.0 or
+                            float(status['battery_watts']) > 70.0
+                        ):
                             if "ON" in plug2.state:
                                 plug2.turn_off()
-                                infuxInsertString += "lastNotice" + "=\"" +  str(datetime.now()) + "Turning Kasa 1 off\","
-                                logIt(str(datetime.now()) + "Turning kasa plug 2 off")
+                                infuxInsertString += "lastNotice" + "=\"" +  str(datetime.now()) + " Turning Kasa 2 off\","
+                                logIt("Turning kasa plug 2 off")
                             elif "ON" in plug1.state:
                                 plug1.turn_off()
-                                infuxInsertString += "lastNotice" + "=\"" +  str(datetime.now()) + "Turning Kasa 1 off\","
-                                logIt(str(datetime.now()) + "Turning kasa plug 1 off")
+                                infuxInsertString += "lastNotice" + "=\"" +  str(datetime.now()) + " Turning Kasa 1 off\","
+                                logIt("Turning kasa plug 1 off")
                             
                     except:
                        logIt("Error changing space heater load (KASA PLUG 1 or 2)")
@@ -87,7 +90,7 @@ def main(argv=None):
                 try:
                     write_api = client.write_api(write_options=SYNCHRONOUS)
                     write_api.write(bucket, org, infuxInsertString.rstrip(','))
-                    logIt( str(datetime.now()) + ": uploaded to influxDB -> " + infuxInsertString[0:50] + "..." + infuxInsertString[-50:])
+                    logIt("uploaded to influxDB -> " + infuxInsertString[0:50] + "..." + infuxInsertString[-50:])
                 except:
                     traceback.print_exc()
     
