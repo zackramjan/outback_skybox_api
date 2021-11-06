@@ -57,6 +57,7 @@ def main(argv=None):
                     try:
                         plug1 = SmartPlug("192.168.1.131")
                         plug2 = SmartPlug("192.168.1.132")
+                        plug3 = SmartPlug("192.168.1.127")
                         if(float(status['pv_bb_input_voltage']) > 345.0 and 
                             float(status['grid_realtime_wattage_sum']) > -700.0 and 
                             float(status['battery_watts']) > -100.0 and
@@ -70,13 +71,22 @@ def main(argv=None):
                                 plug2.turn_on()
                                 infuxInsertString += "lastNotice" + "=\"" +  str(datetime.now()) + " Turning Kasa 2 on\","
                                 logIt("Turning kasa plug 2 on")
+                            elif "OFF" in plug3.state:
+                                plug3.turn_on()
+                                infuxInsertString += "lastNotice" + "=\"" +  str(datetime.now()) + " Turning Kasa 3 on\","
+                                logIt("Turning kasa plug 3 on")
                             sleeptime = sleeptime / 2
 
                         elif(float(status['grid_realtime_wattage_sum']) < -700.0 or 
                             float(status['battery_watts']) < -200.0 or
                             float(status['battery_watts']) > 70.0
                         ):
-                            if "ON" in plug2.state:
+                            if "ON" in plug3.state:
+                                plug3.turn_off()
+                                infuxInsertString += "lastNotice" + "=\"" +  str(datetime.now()) + " Turning Kasa 3 off\","
+                                logIt("Turning kasa plug 3 off")
+                                sleeptime = sleeptime / 2
+                            elif "ON" in plug2.state:
                                 plug2.turn_off()
                                 infuxInsertString += "lastNotice" + "=\"" +  str(datetime.now()) + " Turning Kasa 2 off\","
                                 logIt("Turning kasa plug 2 off")
@@ -88,7 +98,7 @@ def main(argv=None):
                                 sleeptime = sleeptime / 2
                             
                     except:
-                       logIt("Error changing space heater load (KASA PLUG 1 or 2)")
+                       logIt("Error changing space heater load (KASA PLUG 1, 2 or 3)")
                        traceback.print_exc()
                                 
                 except:
