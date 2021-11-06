@@ -14,19 +14,23 @@ import SkyboxAPI
 def logIt(msg):
     print(str(datetime.now()) + ": " + msg, file=sys.stderr, flush=True)
 
-#this is an example usage of the SkyboxAPI to retrieve and print various metrics
+def readConfig():
+   f = open('config.json', "r") 
+   config = json.load(f)
+   token = config["token"]
+   org = config["org"]
+   bucket = config["bucket"]
+   url = config["url"]
+   skyboxurl = config["skyboxurl"]
+   sleeptime = int(config["sleeptime"])
+   f.close() 
+   return config["token"],config["org"],config["bucket"],config["url"],config["skyboxurl"],int(config["sleeptime"])
+
+
 def main(argv=None): 
     while True:
         try:
-            f = open('config.json', "r") 
-            config = json.load(f)
-            token = config["token"]
-            org = config["org"]
-            bucket = config["bucket"]
-            url = config["url"]
-            skyboxurl = config["skyboxurl"]
-            sleeptime = int(config["sleeptime"])
-    
+            token,org,bucket,url,skyboxurl,sleeptime = readConfig()
             client = InfluxDBClient(url=url, token=token, verify_ssl=False)
             
             s = SkyboxAPI.SkyboxAPI()
@@ -34,6 +38,7 @@ def main(argv=None):
             loginStatus = s.login(skyboxurl) 
             while True:
                 try:
+                    token,org,bucket,url,skyboxurl,sleeptime = readConfig()
                     status = s.getStatus()
                     alert =  s.getAlerts()[0]
                     notifcation =  s.getNotifications()[0]
@@ -65,6 +70,8 @@ def main(argv=None):
                                 plug2.turn_on()
                                 infuxInsertString += "lastNotice" + "=\"" +  str(datetime.now()) + " Turning Kasa 2 on\","
                                 logIt("Turning kasa plug 2 on")
+                            sleeptime = sleeptime / 2
+
                         elif(float(status['grid_realtime_wattage_sum']) < -700.0 or 
                             float(status['battery_watts']) < -200.0 or
                             float(status['battery_watts']) > 70.0
@@ -73,28 +80,32 @@ def main(argv=None):
                                 plug2.turn_off()
                                 infuxInsertString += "lastNotice" + "=\"" +  str(datetime.now()) + " Turning Kasa 2 off\","
                                 logIt("Turning kasa plug 2 off")
+                                sleeptime = sleeptime / 2
                             elif "ON" in plug1.state:
                                 plug1.turn_off()
                                 infuxInsertString += "lastNotice" + "=\"" +  str(datetime.now()) + " Turning Kasa 1 off\","
                                 logIt("Turning kasa plug 1 off")
+                                sleeptime = sleeptime / 2
                             
                     except:
                        logIt("Error changing space heater load (KASA PLUG 1 or 2)")
                        traceback.print_exc()
-
                                 
                 except:
                     logIt("error, retrying logging into " +  skyboxurl)
                     traceback.print_exc()
                     loginStatus = s.login(skyboxurl) 
+
                 try:
                     write_api = client.write_api(write_options=SYNCHRONOUS)
                     write_api.write(bucket, org, infuxInsertString.rstrip(','))
                     logIt("uploaded to influxDB -> " + infuxInsertString[0:50] + "..." + infuxInsertString[-50:])
+
                 except:
                     traceback.print_exc()
     
                 time.sleep(sleeptime)
+                
         except:
             traceback.print_exc()
             time.sleep(60) 
