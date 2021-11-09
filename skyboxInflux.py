@@ -44,6 +44,7 @@ def main(argv=None):
                     notifcation =  s.getNotifications()[0]
                     infuxInsertString = "skybox lastNotice=\"" + str(datetime.fromtimestamp(int(notifcation["Timestamp"])/1000))  + " " + notifcation["Message"] + "\","
                     infuxInsertString += "lastAlert=\"" +  str(datetime.fromtimestamp(int(alert["Timestamp"])/1000))  + " " + alert["Message"] + "\","
+                    statusMsg = "PV_WATTS=" + str(float(status["pv_output_power_dc"])) + " PV_VOLTS=" + str(float(status["pv_pmb_voltage"])) + " GRID_WATTS=" + str(float(status["grid_realtime_wattage_sum"])) + " BATT_WATTS=" + str(float(status["battery_watts"])) + " BATT_VOLTS=" + str(float(status["battery_voltage"]))
                     
                     for e in sorted(status):
                         if not e.endswith("_property"):
@@ -55,14 +56,14 @@ def main(argv=None):
                     
                     #check for curtailment, and if so, add load via space heaters
                     try:
-                        plug1 = SmartPlug("192.168.1.131")
-                        plug2 = SmartPlug("192.168.1.132")
-                        plug3 = SmartPlug("192.168.1.127")
                         if(float(status['pv_bb_input_voltage']) > 345.0 and 
                             float(status['grid_realtime_wattage_sum']) > -700.0 and 
                             float(status['battery_watts']) > -100.0 and
                             float(status['battery_watts']) < 100.0
                         ):
+                            plug1 = SmartPlug("192.168.1.131")
+                            plug2 = SmartPlug("192.168.1.132")
+                            plug3 = SmartPlug("192.168.1.127")
                             if "OFF" in plug1.state:
                                 plug1.turn_on()
                                 infuxInsertString += "lastNotice" + "=\"" +  str(datetime.now()) + " Turning Kasa 1 on\","
@@ -81,6 +82,9 @@ def main(argv=None):
                             float(status['battery_watts']) < -200.0 or
                             float(status['battery_watts']) > 70.0
                         ):
+                            plug1 = SmartPlug("192.168.1.131")
+                            plug2 = SmartPlug("192.168.1.132")
+                            plug3 = SmartPlug("192.168.1.127")
                             if "ON" in plug3.state:
                                 plug3.turn_off()
                                 infuxInsertString += "lastNotice" + "=\"" +  str(datetime.now()) + " Turning Kasa 3 off\","
@@ -109,7 +113,7 @@ def main(argv=None):
                 try:
                     write_api = client.write_api(write_options=SYNCHRONOUS)
                     write_api.write(bucket, org, infuxInsertString.rstrip(','))
-                    logIt("uploaded to influxDB -> " + infuxInsertString[0:50] + "..." + infuxInsertString[-50:])
+                    logIt("uploaded to influxDB -> " + statusMsg)
 
                 except:
                     traceback.print_exc()
