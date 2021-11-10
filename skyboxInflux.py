@@ -44,7 +44,7 @@ def main(argv=None):
                     notifcation =  s.getNotifications()[0]
                     infuxInsertString = "skybox lastNotice=\"" + str(datetime.fromtimestamp(int(notifcation["Timestamp"])/1000))  + " " + notifcation["Message"] + "\","
                     infuxInsertString += "lastAlert=\"" +  str(datetime.fromtimestamp(int(alert["Timestamp"])/1000))  + " " + alert["Message"] + "\","
-                    statusMsg = "PV_WATTS=" + str(float(status["pv_output_power_dc"])) + " PV_VOLTS=" + str(float(status["pv_pmb_voltage"])) + " GRID_WATTS=" + str(float(status["grid_realtime_wattage_sum"])) + " BATT_WATTS=" + str(float(status["battery_watts"])) + " BATT_VOLTS=" + str(float(status["battery_voltage"]))
+                    statusMsg = "PV_WATTS=" + str(float(status["pv_output_power_dc"])) + " PV_VOLTS=" + str(float(status["pv_pmb_voltage"])) + " GRID_WATTS=" + str(float(status["grid_realtime_wattage_sum"])) + " BATT_WATTS=" + str(float(status["battery_watts"])) + " BATT_VOLTS=" + str(float(status["battery_voltage"])) + " BATT_SOC=" + str(float(status["battery_state_of_charge"]))
                     
                     for e in sorted(status):
                         if not e.endswith("_property"):
