@@ -8,7 +8,7 @@ from influxdb_client import InfluxDBClient, Point, WritePrecision
 from influxdb_client.client.write_api import SYNCHRONOUS
 import requests
 from requests.packages.urllib3.exceptions import InsecureRequestWarning
-from pyHS100 import SmartPlug, SmartBulb
+
 import SkyboxAPI
 
 def logIt(msg):
@@ -53,57 +53,6 @@ def main(argv=None):
                                 infuxInsertString += e + "=" +  status[e].lower() + ","
                             except:
                                 pass
-                    
-                    #check for curtailment, and if so, add load via space heaters
-                    try:
-                        if(float(status['pv_bb_input_voltage']) > 345.0 and 
-                            float(status['grid_realtime_wattage_sum']) > -700.0 and 
-                            float(status['battery_watts']) > -100.0 and
-                            float(status['battery_watts']) < 100.0
-                        ):
-                            plug1 = SmartPlug("192.168.1.131")
-                            plug2 = SmartPlug("192.168.1.132")
-                            plug3 = SmartPlug("192.168.1.127")
-                            if "OFF" in plug1.state:
-                                plug1.turn_on()
-                                infuxInsertString += "lastNotice" + "=\"" +  str(datetime.now()) + " Turning Kasa 1 on\","
-                                logIt("Turning kasa plug 1 on")
-                            elif "OFF" in plug2.state:
-                                plug2.turn_on()
-                                infuxInsertString += "lastNotice" + "=\"" +  str(datetime.now()) + " Turning Kasa 2 on\","
-                                logIt("Turning kasa plug 2 on")
-                            elif "OFF" in plug3.state:
-                                plug3.turn_on()
-                                infuxInsertString += "lastNotice" + "=\"" +  str(datetime.now()) + " Turning Kasa 3 on\","
-                                logIt("Turning kasa plug 3 on")
-                            sleeptime = sleeptime / 2
-
-                        elif(float(status['grid_realtime_wattage_sum']) < -700.0 or 
-                            float(status['battery_watts']) < -200.0 or
-                            float(status['battery_watts']) > 70.0
-                        ):
-                            plug1 = SmartPlug("192.168.1.131")
-                            plug2 = SmartPlug("192.168.1.132")
-                            plug3 = SmartPlug("192.168.1.127")
-                            if "ON" in plug3.state:
-                                plug3.turn_off()
-                                infuxInsertString += "lastNotice" + "=\"" +  str(datetime.now()) + " Turning Kasa 3 off\","
-                                logIt("Turning kasa plug 3 off")
-                                sleeptime = sleeptime / 2
-                            elif "ON" in plug2.state:
-                                plug2.turn_off()
-                                infuxInsertString += "lastNotice" + "=\"" +  str(datetime.now()) + " Turning Kasa 2 off\","
-                                logIt("Turning kasa plug 2 off")
-                                sleeptime = sleeptime / 2
-                            elif "ON" in plug1.state:
-                                plug1.turn_off()
-                                infuxInsertString += "lastNotice" + "=\"" +  str(datetime.now()) + " Turning Kasa 1 off\","
-                                logIt("Turning kasa plug 1 off")
-                                sleeptime = sleeptime / 2
-                            
-                    except:
-                       logIt("Error changing space heater load (KASA PLUG 1, 2 or 3)")
-                       traceback.print_exc()
                                 
                 except:
                     logIt("error, retrying logging into " +  skyboxurl)
