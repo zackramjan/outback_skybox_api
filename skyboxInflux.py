@@ -66,7 +66,7 @@ def main(argv=None):
                     #add the last alert and warning to the upload string for influxdb
                     infuxInsertString = "skybox lastNotice=\"" + str(datetime.fromtimestamp(int(notifcation["Timestamp"])/1000))  + " " + notifcation["Message"] + "\","
                     infuxInsertString += "lastAlert=\"" +  str(datetime.fromtimestamp(int(alert["Timestamp"])/1000))  + " " + alert["Message"] + "\","
-                    statusMsg = "PV_WATTS=" + str(float(status["pv_output_power_dc"])) + " PV_VOLTS=" + str(float(status["pv_pmb_voltage"])) + " GRID_WATTS=" + str(float(status["grid_realtime_wattage_sum"])) + " BATT_WATTS=" + str(float(status["battery_watts"])) + " BATT_VOLTS=" + str(float(status["battery_voltage"])) + " BATT_SOC=" + str(float(status["battery_state_of_charge"]))
+                    statusMsg = "PV_WATTS=" + str(float(status["pv_output_power_dc"])) + "\tPV_VOLTS=" + str(float(status["pv_pmb_voltage"])) + "\tGRID_WATTS=" + str(float(status["grid_realtime_wattage_sum"])) + "\tBATT_WATTS=" + str(float(status["battery_watts"])) + "\tBATT_VOLTS=" + str(float(status["battery_voltage"])) + "\tBATT_SOC=" + str(float(status["battery_state_of_charge"]))
                     
                     #add the metrics to the upload string for influxdb, we can ignore metrics that end with _property
                     for e in sorted(status):
